@@ -1,0 +1,512 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		04F2CEFF250DC856006935CA /* HZAudioUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F2CEFE250DC856006935CA /* HZAudioUnit.m */; };
+		7122F45C2501E7CC00691DAA /* HZURLAssetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7122F45B2501E7CC00691DAA /* HZURLAssetViewController.m */; };
+		7122F45F2501EF1500691DAA /* HZCompositionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7122F45E2501EF1500691DAA /* HZCompositionViewController.m */; };
+		71A1D1622503252A0063AE7C /* FXSample.mov in Resources */ = {isa = PBXBuildFile; fileRef = 71A1D1612503252A0063AE7C /* FXSample.mov */; };
+		71A1D166250380BF0063AE7C /* AVAssetResourceLoaderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A1D165250380BF0063AE7C /* AVAssetResourceLoaderTest.m */; };
+		71C2195325105D1600E2ADFF /* XBPCMPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C2194B25105D1600E2ADFF /* XBPCMPlayer.m */; };
+		71C2195425105D1600E2ADFF /* XBAudioUnitPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C2194C25105D1600E2ADFF /* XBAudioUnitPlayer.m */; };
+		71C2195525105D1600E2ADFF /* XBAudioDataReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C2194E25105D1600E2ADFF /* XBAudioDataReader.m */; };
+		71C2195625105D1600E2ADFF /* XBAudioDataWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C2195025105D1600E2ADFF /* XBAudioDataWriter.m */; };
+		71C2195A25105D7000E2ADFF /* XBAudioTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C2195925105D7000E2ADFF /* XBAudioTool.m */; };
+		A27FE51624E0E5160023D382 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A27FE51524E0E5160023D382 /* AppDelegate.m */; };
+		A27FE51C24E0E5160023D382 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A27FE51B24E0E5160023D382 /* ViewController.m */; };
+		A27FE51F24E0E5160023D382 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A27FE51D24E0E5160023D382 /* Main.storyboard */; };
+		A27FE52124E0E5170023D382 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A27FE52024E0E5170023D382 /* Assets.xcassets */; };
+		A27FE52424E0E5170023D382 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A27FE52224E0E5170023D382 /* LaunchScreen.storyboard */; };
+		A27FE52724E0E5170023D382 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A27FE52624E0E5170023D382 /* main.m */; };
+		A27FE53224E0EC990023D382 /* SQSystemCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = A27FE53124E0EC990023D382 /* SQSystemCapture.m */; };
+		A27FE53524E1187A0023D382 /* SQVideoEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = A27FE53424E1187A0023D382 /* SQVideoEncoder.m */; };
+		A27FE53824E1188E0023D382 /* SQVideoDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = A27FE53724E1188E0023D382 /* SQVideoDecoder.m */; };
+		A27FE53B24E11D0E0023D382 /* SQAVConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = A27FE53A24E11D0E0023D382 /* SQAVConfig.m */; };
+		A27FE53F24E39A250023D382 /* SQLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A27FE53E24E39A250023D382 /* SQLayer.m */; };
+		A27FE54324E506260023D382 /* SQAudioEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = A27FE54224E506260023D382 /* SQAudioEncoder.m */; };
+		A27FE54624E52BB00023D382 /* SQAudioDecode.m in Sources */ = {isa = PBXBuildFile; fileRef = A27FE54524E52BB00023D382 /* SQAudioDecode.m */; };
+		A27FE54924E6132B0023D382 /* SQAudioPlay.m in Sources */ = {isa = PBXBuildFile; fileRef = A27FE54824E6132B0023D382 /* SQAudioPlay.m */; };
+		A27FE54C24E613DA0023D382 /* SQAudioDataQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = A27FE54B24E613DA0023D382 /* SQAudioDataQueue.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		04F2CEFD250DC856006935CA /* HZAudioUnit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZAudioUnit.h; sourceTree = "<group>"; };
+		04F2CEFE250DC856006935CA /* HZAudioUnit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZAudioUnit.m; sourceTree = "<group>"; };
+		7122F45A2501E7CC00691DAA /* HZURLAssetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZURLAssetViewController.h; sourceTree = "<group>"; };
+		7122F45B2501E7CC00691DAA /* HZURLAssetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZURLAssetViewController.m; sourceTree = "<group>"; };
+		7122F45D2501EF1500691DAA /* HZCompositionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZCompositionViewController.h; sourceTree = "<group>"; };
+		7122F45E2501EF1500691DAA /* HZCompositionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZCompositionViewController.m; sourceTree = "<group>"; };
+		71A1D1612503252A0063AE7C /* FXSample.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = FXSample.mov; sourceTree = "<group>"; };
+		71A1D164250380BF0063AE7C /* AVAssetResourceLoaderTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVAssetResourceLoaderTest.h; sourceTree = "<group>"; };
+		71A1D165250380BF0063AE7C /* AVAssetResourceLoaderTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AVAssetResourceLoaderTest.m; sourceTree = "<group>"; };
+		71C2194B25105D1600E2ADFF /* XBPCMPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBPCMPlayer.m; sourceTree = "<group>"; };
+		71C2194C25105D1600E2ADFF /* XBAudioUnitPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBAudioUnitPlayer.m; sourceTree = "<group>"; };
+		71C2194D25105D1600E2ADFF /* XBAudioDataWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBAudioDataWriter.h; sourceTree = "<group>"; };
+		71C2194E25105D1600E2ADFF /* XBAudioDataReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBAudioDataReader.m; sourceTree = "<group>"; };
+		71C2194F25105D1600E2ADFF /* XBPCMPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBPCMPlayer.h; sourceTree = "<group>"; };
+		71C2195025105D1600E2ADFF /* XBAudioDataWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBAudioDataWriter.m; sourceTree = "<group>"; };
+		71C2195125105D1600E2ADFF /* XBAudioUnitPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBAudioUnitPlayer.h; sourceTree = "<group>"; };
+		71C2195225105D1600E2ADFF /* XBAudioDataReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBAudioDataReader.h; sourceTree = "<group>"; };
+		71C2195725105D3F00E2ADFF /* Header_audio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header_audio.h; sourceTree = "<group>"; };
+		71C2195825105D7000E2ADFF /* XBAudioTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBAudioTool.h; sourceTree = "<group>"; };
+		71C2195925105D7000E2ADFF /* XBAudioTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBAudioTool.m; sourceTree = "<group>"; };
+		A27FE51124E0E5160023D382 /* AVDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AVDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A27FE51424E0E5160023D382 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A27FE51524E0E5160023D382 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A27FE51A24E0E5160023D382 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		A27FE51B24E0E5160023D382 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A27FE51E24E0E5160023D382 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A27FE52024E0E5170023D382 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A27FE52324E0E5170023D382 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A27FE52524E0E5170023D382 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A27FE52624E0E5170023D382 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A27FE53024E0EC990023D382 /* SQSystemCapture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQSystemCapture.h; sourceTree = "<group>"; };
+		A27FE53124E0EC990023D382 /* SQSystemCapture.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQSystemCapture.m; sourceTree = "<group>"; };
+		A27FE53324E1187A0023D382 /* SQVideoEncoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQVideoEncoder.h; sourceTree = "<group>"; };
+		A27FE53424E1187A0023D382 /* SQVideoEncoder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQVideoEncoder.m; sourceTree = "<group>"; };
+		A27FE53624E1188E0023D382 /* SQVideoDecoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQVideoDecoder.h; sourceTree = "<group>"; };
+		A27FE53724E1188E0023D382 /* SQVideoDecoder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQVideoDecoder.m; sourceTree = "<group>"; };
+		A27FE53924E11D0E0023D382 /* SQAVConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQAVConfig.h; sourceTree = "<group>"; };
+		A27FE53A24E11D0E0023D382 /* SQAVConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQAVConfig.m; sourceTree = "<group>"; };
+		A27FE53D24E39A250023D382 /* SQLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQLayer.h; sourceTree = "<group>"; };
+		A27FE53E24E39A250023D382 /* SQLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQLayer.m; sourceTree = "<group>"; };
+		A27FE54124E506260023D382 /* SQAudioEncoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQAudioEncoder.h; sourceTree = "<group>"; };
+		A27FE54224E506260023D382 /* SQAudioEncoder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQAudioEncoder.m; sourceTree = "<group>"; };
+		A27FE54424E52BB00023D382 /* SQAudioDecode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQAudioDecode.h; sourceTree = "<group>"; };
+		A27FE54524E52BB00023D382 /* SQAudioDecode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQAudioDecode.m; sourceTree = "<group>"; };
+		A27FE54724E6132B0023D382 /* SQAudioPlay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQAudioPlay.h; sourceTree = "<group>"; };
+		A27FE54824E6132B0023D382 /* SQAudioPlay.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQAudioPlay.m; sourceTree = "<group>"; };
+		A27FE54A24E613DA0023D382 /* SQAudioDataQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQAudioDataQueue.h; sourceTree = "<group>"; };
+		A27FE54B24E613DA0023D382 /* SQAudioDataQueue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQAudioDataQueue.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A27FE50E24E0E5160023D382 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		715CE97D250623DD00E6A21A /* AVAssetResourceLoader */ = {
+			isa = PBXGroup;
+			children = (
+				71A1D164250380BF0063AE7C /* AVAssetResourceLoaderTest.h */,
+				71A1D165250380BF0063AE7C /* AVAssetResourceLoaderTest.m */,
+			);
+			path = AVAssetResourceLoader;
+			sourceTree = "<group>";
+		};
+		71A1D16325037F5A0063AE7C /* AVFoundation */ = {
+			isa = PBXGroup;
+			children = (
+				715CE97D250623DD00E6A21A /* AVAssetResourceLoader */,
+				7122F45A2501E7CC00691DAA /* HZURLAssetViewController.h */,
+				7122F45B2501E7CC00691DAA /* HZURLAssetViewController.m */,
+				7122F45D2501EF1500691DAA /* HZCompositionViewController.h */,
+				7122F45E2501EF1500691DAA /* HZCompositionViewController.m */,
+			);
+			path = AVFoundation;
+			sourceTree = "<group>";
+		};
+		71C2194A25105D1600E2ADFF /* PCMPlay */ = {
+			isa = PBXGroup;
+			children = (
+				71C2195825105D7000E2ADFF /* XBAudioTool.h */,
+				71C2195925105D7000E2ADFF /* XBAudioTool.m */,
+				71C2195725105D3F00E2ADFF /* Header_audio.h */,
+				71C2194F25105D1600E2ADFF /* XBPCMPlayer.h */,
+				71C2194B25105D1600E2ADFF /* XBPCMPlayer.m */,
+				71C2195125105D1600E2ADFF /* XBAudioUnitPlayer.h */,
+				71C2194C25105D1600E2ADFF /* XBAudioUnitPlayer.m */,
+				71C2194D25105D1600E2ADFF /* XBAudioDataWriter.h */,
+				71C2195025105D1600E2ADFF /* XBAudioDataWriter.m */,
+				71C2195225105D1600E2ADFF /* XBAudioDataReader.h */,
+				71C2194E25105D1600E2ADFF /* XBAudioDataReader.m */,
+			);
+			path = PCMPlay;
+			sourceTree = "<group>";
+		};
+		A27FE50824E0E5160023D382 = {
+			isa = PBXGroup;
+			children = (
+				A27FE51324E0E5160023D382 /* AVDemo */,
+				A27FE51224E0E5160023D382 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A27FE51224E0E5160023D382 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A27FE51124E0E5160023D382 /* AVDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A27FE51324E0E5160023D382 /* AVDemo */ = {
+			isa = PBXGroup;
+			children = (
+				71A1D1612503252A0063AE7C /* FXSample.mov */,
+				71C2194A25105D1600E2ADFF /* PCMPlay */,
+				71A1D16325037F5A0063AE7C /* AVFoundation */,
+				A27FE54024E505F20023D382 /* AudioEncoder */,
+				A27FE53C24E399F30023D382 /* View */,
+				A27FE52E24E0E58E0023D382 /* AVCoder */,
+				A27FE52D24E0E5870023D382 /* Capture */,
+				A27FE51424E0E5160023D382 /* AppDelegate.h */,
+				A27FE51524E0E5160023D382 /* AppDelegate.m */,
+				A27FE51A24E0E5160023D382 /* ViewController.h */,
+				A27FE51B24E0E5160023D382 /* ViewController.m */,
+				A27FE51D24E0E5160023D382 /* Main.storyboard */,
+				A27FE52024E0E5170023D382 /* Assets.xcassets */,
+				A27FE52224E0E5170023D382 /* LaunchScreen.storyboard */,
+				A27FE52524E0E5170023D382 /* Info.plist */,
+				A27FE52624E0E5170023D382 /* main.m */,
+			);
+			path = AVDemo;
+			sourceTree = "<group>";
+		};
+		A27FE52D24E0E5870023D382 /* Capture */ = {
+			isa = PBXGroup;
+			children = (
+				A27FE53024E0EC990023D382 /* SQSystemCapture.h */,
+				A27FE53124E0EC990023D382 /* SQSystemCapture.m */,
+			);
+			path = Capture;
+			sourceTree = "<group>";
+		};
+		A27FE52E24E0E58E0023D382 /* AVCoder */ = {
+			isa = PBXGroup;
+			children = (
+				A27FE53324E1187A0023D382 /* SQVideoEncoder.h */,
+				A27FE53424E1187A0023D382 /* SQVideoEncoder.m */,
+				A27FE53624E1188E0023D382 /* SQVideoDecoder.h */,
+				A27FE53724E1188E0023D382 /* SQVideoDecoder.m */,
+				A27FE53924E11D0E0023D382 /* SQAVConfig.h */,
+				A27FE53A24E11D0E0023D382 /* SQAVConfig.m */,
+			);
+			path = AVCoder;
+			sourceTree = "<group>";
+		};
+		A27FE53C24E399F30023D382 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A27FE53D24E39A250023D382 /* SQLayer.h */,
+				A27FE53E24E39A250023D382 /* SQLayer.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A27FE54024E505F20023D382 /* AudioEncoder */ = {
+			isa = PBXGroup;
+			children = (
+				A27FE54124E506260023D382 /* SQAudioEncoder.h */,
+				A27FE54224E506260023D382 /* SQAudioEncoder.m */,
+				A27FE54424E52BB00023D382 /* SQAudioDecode.h */,
+				A27FE54524E52BB00023D382 /* SQAudioDecode.m */,
+				A27FE54724E6132B0023D382 /* SQAudioPlay.h */,
+				A27FE54824E6132B0023D382 /* SQAudioPlay.m */,
+				A27FE54A24E613DA0023D382 /* SQAudioDataQueue.h */,
+				A27FE54B24E613DA0023D382 /* SQAudioDataQueue.m */,
+				04F2CEFD250DC856006935CA /* HZAudioUnit.h */,
+				04F2CEFE250DC856006935CA /* HZAudioUnit.m */,
+			);
+			path = AudioEncoder;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A27FE51024E0E5160023D382 /* AVDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A27FE52A24E0E5170023D382 /* Build configuration list for PBXNativeTarget "AVDemo" */;
+			buildPhases = (
+				A27FE50D24E0E5160023D382 /* Sources */,
+				A27FE50E24E0E5160023D382 /* Frameworks */,
+				A27FE50F24E0E5160023D382 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AVDemo;
+			productName = AVDemo;
+			productReference = A27FE51124E0E5160023D382 /* AVDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A27FE50924E0E5160023D382 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1160;
+				ORGANIZATIONNAME = SEM;
+				TargetAttributes = {
+					A27FE51024E0E5160023D382 = {
+						CreatedOnToolsVersion = 11.6;
+					};
+				};
+			};
+			buildConfigurationList = A27FE50C24E0E5160023D382 /* Build configuration list for PBXProject "AVDemo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A27FE50824E0E5160023D382;
+			productRefGroup = A27FE51224E0E5160023D382 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A27FE51024E0E5160023D382 /* AVDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A27FE50F24E0E5160023D382 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71A1D1622503252A0063AE7C /* FXSample.mov in Resources */,
+				A27FE52424E0E5170023D382 /* LaunchScreen.storyboard in Resources */,
+				A27FE52124E0E5170023D382 /* Assets.xcassets in Resources */,
+				A27FE51F24E0E5160023D382 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A27FE50D24E0E5160023D382 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A27FE54924E6132B0023D382 /* SQAudioPlay.m in Sources */,
+				A27FE53B24E11D0E0023D382 /* SQAVConfig.m in Sources */,
+				7122F45C2501E7CC00691DAA /* HZURLAssetViewController.m in Sources */,
+				7122F45F2501EF1500691DAA /* HZCompositionViewController.m in Sources */,
+				71C2195A25105D7000E2ADFF /* XBAudioTool.m in Sources */,
+				A27FE51C24E0E5160023D382 /* ViewController.m in Sources */,
+				71C2195625105D1600E2ADFF /* XBAudioDataWriter.m in Sources */,
+				A27FE51624E0E5160023D382 /* AppDelegate.m in Sources */,
+				A27FE52724E0E5170023D382 /* main.m in Sources */,
+				A27FE54C24E613DA0023D382 /* SQAudioDataQueue.m in Sources */,
+				A27FE53524E1187A0023D382 /* SQVideoEncoder.m in Sources */,
+				A27FE53F24E39A250023D382 /* SQLayer.m in Sources */,
+				71C2195325105D1600E2ADFF /* XBPCMPlayer.m in Sources */,
+				A27FE54324E506260023D382 /* SQAudioEncoder.m in Sources */,
+				71C2195525105D1600E2ADFF /* XBAudioDataReader.m in Sources */,
+				71A1D166250380BF0063AE7C /* AVAssetResourceLoaderTest.m in Sources */,
+				A27FE54624E52BB00023D382 /* SQAudioDecode.m in Sources */,
+				A27FE53224E0EC990023D382 /* SQSystemCapture.m in Sources */,
+				04F2CEFF250DC856006935CA /* HZAudioUnit.m in Sources */,
+				A27FE53824E1188E0023D382 /* SQVideoDecoder.m in Sources */,
+				71C2195425105D1600E2ADFF /* XBAudioUnitPlayer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A27FE51D24E0E5160023D382 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A27FE51E24E0E5160023D382 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A27FE52224E0E5170023D382 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A27FE52324E0E5170023D382 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A27FE52824E0E5170023D382 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A27FE52924E0E5170023D382 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A27FE52B24E0E5170023D382 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FR47X7YWHJ;
+				INFOPLIST_FILE = AVDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sem.soueast-motor.jbluhz.AVDemo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A27FE52C24E0E5170023D382 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FR47X7YWHJ;
+				INFOPLIST_FILE = AVDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sem.soueast-motor.jbluhz.AVDemo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A27FE50C24E0E5160023D382 /* Build configuration list for PBXProject "AVDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A27FE52824E0E5170023D382 /* Debug */,
+				A27FE52924E0E5170023D382 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A27FE52A24E0E5170023D382 /* Build configuration list for PBXNativeTarget "AVDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A27FE52B24E0E5170023D382 /* Debug */,
+				A27FE52C24E0E5170023D382 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A27FE50924E0E5160023D382 /* Project object */;
+}
