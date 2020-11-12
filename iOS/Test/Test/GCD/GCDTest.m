@@ -44,4 +44,24 @@
     HZLog(@"等待结束");
 }
 
++ (void)waitTest {
+    // 监听这个block的执行情况
+    dispatch_block_t block = dispatch_block_create_with_qos_class(DISPATCH_BLOCK_DETACHED, QOS_CLASS_DEFAULT, 0, ^{
+        sleep(3);
+    });
+    dispatch_queue_t globalQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_async(globalQueue, block);
+    dispatch_time_t timeout = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC));
+    BOOL shouldBlock = YES;
+    if (shouldBlock) {
+        // 会阻塞当前线程, 在规定的时间内block执行完了, 返回0, 一个block只能执行一次, 也只能等待一次
+        dispatch_block_wait(block, timeout);
+    } else {
+        // 不会阻塞当前线程
+        dispatch_block_notify(block, globalQueue, ^{
+            //block执行完后要执行的block
+        });
+    }
+}
+
 @end

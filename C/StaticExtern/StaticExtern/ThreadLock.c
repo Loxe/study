@@ -81,5 +81,3 @@ void conditionLock(void) {
 }
 
 #endif
-
-

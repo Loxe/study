@@ -6,12 +6,13 @@
 //  Copyright © 2019 vine. All rights reserved.
 //
 
-#include "a.hpp"
-#include "b.hpp"
+
 #include "ThreadLock.c"
 
 int main(int argc, char *argv[])
 {
+    printf("开始");
     conditionLock();
+    printf("结束");
     return 0;
 }
