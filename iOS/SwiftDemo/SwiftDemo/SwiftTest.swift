@@ -97,3 +97,18 @@ class Student: Person {
 }
 
 let s = Student(age: 0)
+
+var a = 10;
+func pointerTest() {
+    pointerTest1(p1: &a)
+}
+func pointerTest1(p1: UnsafeMutablePointer<Int>) {
+    p1.pointee = 11
+}
+func pointerTest2(p1: UnsafeMutableRawPointer) {
+    print(p1.load(as: Int.self))
+    p1.storeBytes(of: 12, as: Int.self)
+}
+func pointerTest3(p1: UnsafeMutableBufferPointer<Int>) {
+    p1.assign(repeating: 1)
+}

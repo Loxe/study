@@ -44,6 +44,7 @@
 		718802762522C01200A17589 /* HZMTKView.m in Sources */ = {isa = PBXBuildFile; fileRef = 718802752522C01200A17589 /* HZMTKView.m */; };
 		7188028E2522E63000A17589 /* HZMTKShader.metal in Sources */ = {isa = PBXBuildFile; fileRef = 7188028D2522E63000A17589 /* HZMTKShader.metal */; };
 		71A1D7C525517D1800AFF8F6 /* hw_decode.c in Sources */ = {isa = PBXBuildFile; fileRef = 71A1D7C425517D1800AFF8F6 /* hw_decode.c */; };
+		71E2751E25635977006721DA /* HZOpenGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E2751D25635977006721DA /* HZOpenGLView.m */; };
 		71E3DF72254667F7007C4D00 /* ffplay.c in Sources */ = {isa = PBXBuildFile; fileRef = 71292EB0254121AD006EB1EB /* ffplay.c */; };
 		71E3DF7625466A46007C4D00 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7146F99D251387130049C7DC /* libiconv.tbd */; };
 		71E3DF7725466A4E007C4D00 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7146F99A251386E30049C7DC /* libz.tbd */; };
@@ -251,6 +252,8 @@
 		7188028D2522E63000A17589 /* HZMTKShader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = HZMTKShader.metal; sourceTree = "<group>"; };
 		71A1D7C325517D1800AFF8F6 /* hw_decode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hw_decode.h; sourceTree = "<group>"; };
 		71A1D7C425517D1800AFF8F6 /* hw_decode.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = hw_decode.c; sourceTree = "<group>"; };
+		71E2751C25635977006721DA /* HZOpenGLView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZOpenGLView.h; sourceTree = "<group>"; };
+		71E2751D25635977006721DA /* HZOpenGLView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZOpenGLView.m; sourceTree = "<group>"; };
 		71E3DF7825466BEE007C4D00 /* ffplay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffplay.h; sourceTree = "<group>"; };
 		71E3DF7C25467073007C4D00 /* config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
 		71E75964253E965400FDA2DE /* HZVideoToolboxDecoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZVideoToolboxDecoder.h; sourceTree = "<group>"; };
@@ -550,6 +553,8 @@
 				718802752522C01200A17589 /* HZMTKView.m */,
 				718802772522C50000A17589 /* HZMTKShaderTypes.h */,
 				7188028D2522E63000A17589 /* HZMTKShader.metal */,
+				71E2751C25635977006721DA /* HZOpenGLView.h */,
+				71E2751D25635977006721DA /* HZOpenGLView.m */,
 			);
 			path = Metal;
 			sourceTree = "<group>";
@@ -809,6 +814,7 @@
 				716C6D5A2511BC0D003D377A /* AppDelegate.m in Sources */,
 				716C6D6B2511BC0F003D377A /* main.m in Sources */,
 				71292ECE254159CB006EB1EB /* BuiltinFunction.c in Sources */,
+				71E2751E25635977006721DA /* HZOpenGLView.m in Sources */,
 				7188028E2522E63000A17589 /* HZMTKShader.metal in Sources */,
 				71A1D7C525517D1800AFF8F6 /* hw_decode.c in Sources */,
 				718802762522C01200A17589 /* HZMTKView.m in Sources */,
