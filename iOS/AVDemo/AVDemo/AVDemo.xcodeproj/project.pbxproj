@@ -12,6 +12,8 @@
 		7122F45F2501EF1500691DAA /* HZCompositionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7122F45E2501EF1500691DAA /* HZCompositionViewController.m */; };
 		71A1D1622503252A0063AE7C /* FXSample.mov in Resources */ = {isa = PBXBuildFile; fileRef = 71A1D1612503252A0063AE7C /* FXSample.mov */; };
 		71A1D166250380BF0063AE7C /* AVAssetResourceLoaderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A1D165250380BF0063AE7C /* AVAssetResourceLoaderTest.m */; };
+		71A63D1125787CDE002BD1AC /* CubeMap.c in Sources */ = {isa = PBXBuildFile; fileRef = 71A63D0E25787CDE002BD1AC /* CubeMap.c */; };
+		71A63D1725787CFA002BD1AC /* CIFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A63D1625787CFA002BD1AC /* CIFilterViewController.m */; };
 		71C2195325105D1600E2ADFF /* XBPCMPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C2194B25105D1600E2ADFF /* XBPCMPlayer.m */; };
 		71C2195425105D1600E2ADFF /* XBAudioUnitPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C2194C25105D1600E2ADFF /* XBAudioUnitPlayer.m */; };
 		71C2195525105D1600E2ADFF /* XBAudioDataReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C2194E25105D1600E2ADFF /* XBAudioDataReader.m */; };
@@ -44,6 +46,10 @@
 		71A1D1612503252A0063AE7C /* FXSample.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = FXSample.mov; sourceTree = "<group>"; };
 		71A1D164250380BF0063AE7C /* AVAssetResourceLoaderTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVAssetResourceLoaderTest.h; sourceTree = "<group>"; };
 		71A1D165250380BF0063AE7C /* AVAssetResourceLoaderTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AVAssetResourceLoaderTest.m; sourceTree = "<group>"; };
+		71A63D0E25787CDE002BD1AC /* CubeMap.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = CubeMap.c; sourceTree = "<group>"; };
+		71A63D1025787CDE002BD1AC /* CubeMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CubeMap.h; sourceTree = "<group>"; };
+		71A63D1525787CFA002BD1AC /* CIFilterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CIFilterViewController.h; sourceTree = "<group>"; };
+		71A63D1625787CFA002BD1AC /* CIFilterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CIFilterViewController.m; sourceTree = "<group>"; };
 		71C2194B25105D1600E2ADFF /* XBPCMPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBPCMPlayer.m; sourceTree = "<group>"; };
 		71C2194C25105D1600E2ADFF /* XBAudioUnitPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBAudioUnitPlayer.m; sourceTree = "<group>"; };
 		71C2194D25105D1600E2ADFF /* XBAudioDataWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBAudioDataWriter.h; sourceTree = "<group>"; };
@@ -117,6 +123,17 @@
 			path = AVFoundation;
 			sourceTree = "<group>";
 		};
+		71A63D0C25787CDE002BD1AC /* CIFilter */ = {
+			isa = PBXGroup;
+			children = (
+				71A63D1025787CDE002BD1AC /* CubeMap.h */,
+				71A63D0E25787CDE002BD1AC /* CubeMap.c */,
+				71A63D1525787CFA002BD1AC /* CIFilterViewController.h */,
+				71A63D1625787CFA002BD1AC /* CIFilterViewController.m */,
+			);
+			path = CIFilter;
+			sourceTree = "<group>";
+		};
 		71C2194A25105D1600E2ADFF /* PCMPlay */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				71A1D1612503252A0063AE7C /* FXSample.mov */,
+				71A63D0C25787CDE002BD1AC /* CIFilter */,
 				71C2194A25105D1600E2ADFF /* PCMPlay */,
 				71A1D16325037F5A0063AE7C /* AVFoundation */,
 				A27FE54024E505F20023D382 /* AudioEncoder */,
@@ -310,10 +328,12 @@
 				71C2195525105D1600E2ADFF /* XBAudioDataReader.m in Sources */,
 				71A1D166250380BF0063AE7C /* AVAssetResourceLoaderTest.m in Sources */,
 				A27FE54624E52BB00023D382 /* SQAudioDecode.m in Sources */,
+				71A63D1725787CFA002BD1AC /* CIFilterViewController.m in Sources */,
 				A27FE53224E0EC990023D382 /* SQSystemCapture.m in Sources */,
 				04F2CEFF250DC856006935CA /* HZAudioUnit.m in Sources */,
 				A27FE53824E1188E0023D382 /* SQVideoDecoder.m in Sources */,
 				71C2195425105D1600E2ADFF /* XBAudioUnitPlayer.m in Sources */,
+				71A63D1125787CDE002BD1AC /* CubeMap.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

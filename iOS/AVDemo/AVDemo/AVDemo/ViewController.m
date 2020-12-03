@@ -16,7 +16,7 @@
 #import "SQAudioPlay.h"
 #import "HZURLAssetViewController.h"
 #import "HZAudioUnit.h"
-
+#import "CIFilterViewController.h"
 
 #define HBUFC_BUFFER_SIZE 2048  //一次最大读取的字节
 
@@ -180,6 +180,10 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+- (IBAction)ciFilter:(id)sender {
+    CIFilterViewController *vc = [[CIFilterViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 #pragma mark - NSStreamDelegate
 - (void)stream:(NSStream *)stream handleEvent:(NSStreamEvent)eventCode {
