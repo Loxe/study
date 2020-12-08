@@ -1,0 +1,431 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7122CCBC257E4F1C0098A0B3 /* ContactsActionPlugIn-main.c in Sources */ = {isa = PBXBuildFile; fileRef = 7122CCBB257E4F1C0098A0B3 /* ContactsActionPlugIn-main.c */; };
+		7122CCCB257E4F510098A0B3 /* MyInstallerPane.m in Sources */ = {isa = PBXBuildFile; fileRef = 7122CCCA257E4F510098A0B3 /* MyInstallerPane.m */; };
+		7122CCCE257E4F510098A0B3 /* MyInstallerPane.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7122CCCC257E4F510098A0B3 /* MyInstallerPane.xib */; };
+		7122CCD1257E4F510098A0B3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7122CCCF257E4F510098A0B3 /* Localizable.strings */; };
+		7122CCD3257E4F510098A0B3 /* InstallerSections.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7122CCD2257E4F510098A0B3 /* InstallerSections.plist */; };
+		7122CCD7257E4F510098A0B3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7122CCD5257E4F510098A0B3 /* InfoPlist.strings */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7122CCB9257E4F1C0098A0B3 /* ContactsActionPlugIn.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ContactsActionPlugIn.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		7122CCBB257E4F1C0098A0B3 /* ContactsActionPlugIn-main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "ContactsActionPlugIn-main.c"; sourceTree = "<group>"; };
+		7122CCBD257E4F1C0098A0B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7122CCC7257E4F510098A0B3 /* InstallerPlugIn.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstallerPlugIn.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		7122CCC9257E4F510098A0B3 /* MyInstallerPane.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyInstallerPane.h; sourceTree = "<group>"; };
+		7122CCCA257E4F510098A0B3 /* MyInstallerPane.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyInstallerPane.m; sourceTree = "<group>"; };
+		7122CCCD257E4F510098A0B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MyInstallerPane.xib; sourceTree = "<group>"; };
+		7122CCD0257E4F510098A0B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7122CCD2257E4F510098A0B3 /* InstallerSections.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = InstallerSections.plist; sourceTree = "<group>"; };
+		7122CCD4257E4F510098A0B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7122CCD6257E4F510098A0B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7122CCB6257E4F1C0098A0B3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7122CCC4257E4F510098A0B3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7122CC94257E4DE10098A0B3 = {
+			isa = PBXGroup;
+			children = (
+				7122CCBA257E4F1C0098A0B3 /* ContactsActionPlugIn */,
+				7122CCC8257E4F510098A0B3 /* InstallerPlugIn */,
+				7122CC9E257E4DE10098A0B3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7122CC9E257E4DE10098A0B3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7122CCB9257E4F1C0098A0B3 /* ContactsActionPlugIn.bundle */,
+				7122CCC7257E4F510098A0B3 /* InstallerPlugIn.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7122CCBA257E4F1C0098A0B3 /* ContactsActionPlugIn */ = {
+			isa = PBXGroup;
+			children = (
+				7122CCBB257E4F1C0098A0B3 /* ContactsActionPlugIn-main.c */,
+				7122CCBD257E4F1C0098A0B3 /* Info.plist */,
+			);
+			path = ContactsActionPlugIn;
+			sourceTree = "<group>";
+		};
+		7122CCC8257E4F510098A0B3 /* InstallerPlugIn */ = {
+			isa = PBXGroup;
+			children = (
+				7122CCC9257E4F510098A0B3 /* MyInstallerPane.h */,
+				7122CCCA257E4F510098A0B3 /* MyInstallerPane.m */,
+				7122CCCC257E4F510098A0B3 /* MyInstallerPane.xib */,
+				7122CCCF257E4F510098A0B3 /* Localizable.strings */,
+				7122CCD2257E4F510098A0B3 /* InstallerSections.plist */,
+				7122CCD4257E4F510098A0B3 /* Info.plist */,
+				7122CCD5257E4F510098A0B3 /* InfoPlist.strings */,
+			);
+			path = InstallerPlugIn;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7122CCB8257E4F1C0098A0B3 /* ContactsActionPlugIn */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7122CCBE257E4F1C0098A0B3 /* Build configuration list for PBXNativeTarget "ContactsActionPlugIn" */;
+			buildPhases = (
+				7122CCB5257E4F1C0098A0B3 /* Sources */,
+				7122CCB6257E4F1C0098A0B3 /* Frameworks */,
+				7122CCB7257E4F1C0098A0B3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ContactsActionPlugIn;
+			productName = ContactsActionPlugIn;
+			productReference = 7122CCB9257E4F1C0098A0B3 /* ContactsActionPlugIn.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		7122CCC6257E4F510098A0B3 /* InstallerPlugIn */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7122CCD8257E4F510098A0B3 /* Build configuration list for PBXNativeTarget "InstallerPlugIn" */;
+			buildPhases = (
+				7122CCC3257E4F510098A0B3 /* Sources */,
+				7122CCC4257E4F510098A0B3 /* Frameworks */,
+				7122CCC5257E4F510098A0B3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = InstallerPlugIn;
+			productName = InstallerPlugIn;
+			productReference = 7122CCC7257E4F510098A0B3 /* InstallerPlugIn.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7122CC95257E4DE10098A0B3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1220;
+				TargetAttributes = {
+					7122CCB8257E4F1C0098A0B3 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					7122CCC6257E4F510098A0B3 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+				};
+			};
+			buildConfigurationList = 7122CC98257E4DE10098A0B3 /* Build configuration list for PBXProject "MacPlugInDemo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7122CC94257E4DE10098A0B3;
+			productRefGroup = 7122CC9E257E4DE10098A0B3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7122CCB8257E4F1C0098A0B3 /* ContactsActionPlugIn */,
+				7122CCC6257E4F510098A0B3 /* InstallerPlugIn */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7122CCB7257E4F1C0098A0B3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7122CCC5257E4F510098A0B3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7122CCCE257E4F510098A0B3 /* MyInstallerPane.xib in Resources */,
+				7122CCD7257E4F510098A0B3 /* InfoPlist.strings in Resources */,
+				7122CCD1257E4F510098A0B3 /* Localizable.strings in Resources */,
+				7122CCD3257E4F510098A0B3 /* InstallerSections.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7122CCB5257E4F1C0098A0B3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7122CCBC257E4F1C0098A0B3 /* ContactsActionPlugIn-main.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7122CCC3257E4F510098A0B3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7122CCCB257E4F510098A0B3 /* MyInstallerPane.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7122CCCC257E4F510098A0B3 /* MyInstallerPane.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7122CCCD257E4F510098A0B3 /* Base */,
+			);
+			name = MyInstallerPane.xib;
+			sourceTree = "<group>";
+		};
+		7122CCCF257E4F510098A0B3 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7122CCD0257E4F510098A0B3 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		7122CCD5257E4F510098A0B3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7122CCD6257E4F510098A0B3 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7122CCAF257E4DE10098A0B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		7122CCB0257E4DE10098A0B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		7122CCBF257E4F1C0098A0B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = FR47X7YWHJ;
+				INFOPLIST_FILE = ContactsActionPlugIn/Info.plist;
+				INSTALL_PATH = "$(HOME)/Developer/Palettes";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Anywii.ContactsActionPlugIn;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		7122CCC0257E4F1C0098A0B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = FR47X7YWHJ;
+				INFOPLIST_FILE = ContactsActionPlugIn/Info.plist;
+				INSTALL_PATH = "$(HOME)/Developer/Palettes";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Anywii.ContactsActionPlugIn;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		7122CCD9257E4F510098A0B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = FR47X7YWHJ;
+				INFOPLIST_FILE = InstallerPlugIn/Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Anywii.InstallerPlugIn;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		7122CCDA257E4F510098A0B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = FR47X7YWHJ;
+				INFOPLIST_FILE = InstallerPlugIn/Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Anywii.InstallerPlugIn;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7122CC98257E4DE10098A0B3 /* Build configuration list for PBXProject "MacPlugInDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7122CCAF257E4DE10098A0B3 /* Debug */,
+				7122CCB0257E4DE10098A0B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7122CCBE257E4F1C0098A0B3 /* Build configuration list for PBXNativeTarget "ContactsActionPlugIn" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7122CCBF257E4F1C0098A0B3 /* Debug */,
+				7122CCC0257E4F1C0098A0B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7122CCD8257E4F510098A0B3 /* Build configuration list for PBXNativeTarget "InstallerPlugIn" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7122CCD9257E4F510098A0B3 /* Debug */,
+				7122CCDA257E4F510098A0B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7122CC95257E4DE10098A0B3 /* Project object */;
+}
