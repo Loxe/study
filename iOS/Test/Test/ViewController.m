@@ -32,6 +32,8 @@
     //[HZAutoreleasePoolTest addRunLoopObserver];
     //self.recorder = [[HZRecorder alloc] init];
     //[GCDTest groupTest];
+    
+    [GCDTest dispatch_time_test];
 }
 
 - (void)createUI {

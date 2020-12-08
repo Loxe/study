@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface GCDTest : NSObject
 
 + (void)groupTest;
++ (void)dispatch_time_test;
 
 @end
 

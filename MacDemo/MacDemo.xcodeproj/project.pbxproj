@@ -12,6 +12,16 @@
 		7122CC71257E30DF0098A0B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7122CC70257E30DF0098A0B3 /* Assets.xcassets */; };
 		7122CC74257E30DF0098A0B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7122CC72257E30DF0098A0B3 /* Main.storyboard */; };
 		7122CC77257E30DF0098A0B3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7122CC76257E30DF0098A0B3 /* main.m */; };
+		719FC569257F878C0087EF51 /* HZPlugInMain.mm in Sources */ = {isa = PBXBuildFile; fileRef = 719FC568257F878C0087EF51 /* HZPlugInMain.mm */; };
+		719FC571257F88610087EF51 /* HZPlugInInterface.mm in Sources */ = {isa = PBXBuildFile; fileRef = 719FC570257F88610087EF51 /* HZPlugInInterface.mm */; };
+		719FC57C257F89300087EF51 /* HZObjectStore.mm in Sources */ = {isa = PBXBuildFile; fileRef = 719FC57B257F89300087EF51 /* HZObjectStore.mm */; };
+		719FC583257F89FC0087EF51 /* HZPlugIn.mm in Sources */ = {isa = PBXBuildFile; fileRef = 719FC582257F89FC0087EF51 /* HZPlugIn.mm */; };
+		719FC588257F8A2D0087EF51 /* HZDevice.mm in Sources */ = {isa = PBXBuildFile; fileRef = 719FC587257F8A2D0087EF51 /* HZDevice.mm */; };
+		719FC58F257F8A7A0087EF51 /* HZStream.mm in Sources */ = {isa = PBXBuildFile; fileRef = 719FC58E257F8A7A0087EF51 /* HZStream.mm */; };
+		719FC596257F8AEB0087EF51 /* CoreMediaIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 719FC595257F8AEB0087EF51 /* CoreMediaIO.framework */; };
+		719FC59A257F8B040087EF51 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 719FC599257F8B040087EF51 /* CoreGraphics.framework */; };
+		719FC59E257F8B100087EF51 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 719FC59D257F8B100087EF51 /* CoreMedia.framework */; };
+		719FC5A2257F8B180087EF51 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 719FC5A1257F8B180087EF51 /* CoreVideo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +35,24 @@
 		7122CC75257E30DF0098A0B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7122CC76257E30DF0098A0B3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7122CC78257E30DF0098A0B3 /* MacDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacDemo.entitlements; sourceTree = "<group>"; };
+		719FC550257F869D0087EF51 /* CoreMediaIOPluginDemo.plugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreMediaIOPluginDemo.plugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		719FC55D257F869D0087EF51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		719FC568257F878C0087EF51 /* HZPlugInMain.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HZPlugInMain.mm; sourceTree = "<group>"; };
+		719FC56E257F88210087EF51 /* HZLogging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZLogging.h; sourceTree = "<group>"; };
+		719FC56F257F88610087EF51 /* HZPlugInInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZPlugInInterface.h; sourceTree = "<group>"; };
+		719FC570257F88610087EF51 /* HZPlugInInterface.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HZPlugInInterface.mm; sourceTree = "<group>"; };
+		719FC57A257F89300087EF51 /* HZObjectStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZObjectStore.h; sourceTree = "<group>"; };
+		719FC57B257F89300087EF51 /* HZObjectStore.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HZObjectStore.mm; sourceTree = "<group>"; };
+		719FC581257F89FC0087EF51 /* HZPlugIn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZPlugIn.h; sourceTree = "<group>"; };
+		719FC582257F89FC0087EF51 /* HZPlugIn.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HZPlugIn.mm; sourceTree = "<group>"; };
+		719FC586257F8A2D0087EF51 /* HZDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZDevice.h; sourceTree = "<group>"; };
+		719FC587257F8A2D0087EF51 /* HZDevice.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HZDevice.mm; sourceTree = "<group>"; };
+		719FC58D257F8A7A0087EF51 /* HZStream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZStream.h; sourceTree = "<group>"; };
+		719FC58E257F8A7A0087EF51 /* HZStream.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HZStream.mm; sourceTree = "<group>"; };
+		719FC595257F8AEB0087EF51 /* CoreMediaIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMediaIO.framework; path = System/Library/Frameworks/CoreMediaIO.framework; sourceTree = SDKROOT; };
+		719FC599257F8B040087EF51 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		719FC59D257F8B100087EF51 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		719FC5A1257F8B180087EF51 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +63,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		719FC54D257F869D0087EF51 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				719FC59E257F8B100087EF51 /* CoreMedia.framework in Frameworks */,
+				719FC59A257F8B040087EF51 /* CoreGraphics.framework in Frameworks */,
+				719FC596257F8AEB0087EF51 /* CoreMediaIO.framework in Frameworks */,
+				719FC5A2257F8B180087EF51 /* CoreVideo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -42,7 +81,9 @@
 			isa = PBXGroup;
 			children = (
 				7122CC69257E30DC0098A0B3 /* MacDemo */,
+				719FC551257F869D0087EF51 /* CoreMediaIOPluginDemo */,
 				7122CC68257E30DC0098A0B3 /* Products */,
+				719FC594257F8AEB0087EF51 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -50,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				7122CC67257E30DC0098A0B3 /* MacDemo.app */,
+				719FC550257F869D0087EF51 /* CoreMediaIOPluginDemo.plugin */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -68,6 +110,37 @@
 				7122CC78257E30DF0098A0B3 /* MacDemo.entitlements */,
 			);
 			path = MacDemo;
+			sourceTree = "<group>";
+		};
+		719FC551257F869D0087EF51 /* CoreMediaIOPluginDemo */ = {
+			isa = PBXGroup;
+			children = (
+				719FC55D257F869D0087EF51 /* Info.plist */,
+				719FC568257F878C0087EF51 /* HZPlugInMain.mm */,
+				719FC56E257F88210087EF51 /* HZLogging.h */,
+				719FC56F257F88610087EF51 /* HZPlugInInterface.h */,
+				719FC570257F88610087EF51 /* HZPlugInInterface.mm */,
+				719FC57A257F89300087EF51 /* HZObjectStore.h */,
+				719FC57B257F89300087EF51 /* HZObjectStore.mm */,
+				719FC581257F89FC0087EF51 /* HZPlugIn.h */,
+				719FC582257F89FC0087EF51 /* HZPlugIn.mm */,
+				719FC586257F8A2D0087EF51 /* HZDevice.h */,
+				719FC587257F8A2D0087EF51 /* HZDevice.mm */,
+				719FC58D257F8A7A0087EF51 /* HZStream.h */,
+				719FC58E257F8A7A0087EF51 /* HZStream.mm */,
+			);
+			path = CoreMediaIOPluginDemo;
+			sourceTree = "<group>";
+		};
+		719FC594257F8AEB0087EF51 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				719FC5A1257F8B180087EF51 /* CoreVideo.framework */,
+				719FC59D257F8B100087EF51 /* CoreMedia.framework */,
+				719FC599257F8B040087EF51 /* CoreGraphics.framework */,
+				719FC595257F8AEB0087EF51 /* CoreMediaIO.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -90,6 +163,23 @@
 			productReference = 7122CC67257E30DC0098A0B3 /* MacDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
+		719FC54F257F869D0087EF51 /* CoreMediaIOPluginDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 719FC563257F869D0087EF51 /* Build configuration list for PBXNativeTarget "CoreMediaIOPluginDemo" */;
+			buildPhases = (
+				719FC54C257F869D0087EF51 /* Sources */,
+				719FC54D257F869D0087EF51 /* Frameworks */,
+				719FC54E257F869D0087EF51 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CoreMediaIOPluginDemo;
+			productName = CoreMediaIOPluginDemo;
+			productReference = 719FC550257F869D0087EF51 /* CoreMediaIOPluginDemo.plugin */;
+			productType = "com.apple.product-type.bundle";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -99,6 +189,9 @@
 				LastUpgradeCheck = 1220;
 				TargetAttributes = {
 					7122CC66257E30DC0098A0B3 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					719FC54F257F869D0087EF51 = {
 						CreatedOnToolsVersion = 12.2;
 					};
 				};
@@ -117,6 +210,7 @@
 			projectRoot = "";
 			targets = (
 				7122CC66257E30DC0098A0B3 /* MacDemo */,
+				719FC54F257F869D0087EF51 /* CoreMediaIOPluginDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -131,6 +225,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		719FC54E257F869D0087EF51 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -141,6 +242,19 @@
 				7122CC6F257E30DC0098A0B3 /* ViewController.m in Sources */,
 				7122CC77257E30DF0098A0B3 /* main.m in Sources */,
 				7122CC6C257E30DC0098A0B3 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		719FC54C257F869D0087EF51 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				719FC571257F88610087EF51 /* HZPlugInInterface.mm in Sources */,
+				719FC57C257F89300087EF51 /* HZObjectStore.mm in Sources */,
+				719FC583257F89FC0087EF51 /* HZPlugIn.mm in Sources */,
+				719FC588257F8A2D0087EF51 /* HZDevice.mm in Sources */,
+				719FC569257F878C0087EF51 /* HZPlugInMain.mm in Sources */,
+				719FC58F257F8A7A0087EF51 /* HZStream.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +398,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Anywii.MacDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -304,8 +419,37 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Anywii.MacDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		719FC561257F869D0087EF51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = FR47X7YWHJ;
+				INFOPLIST_FILE = CoreMediaIOPluginDemo/Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Anywii.CoreMediaIOPluginDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = plugin;
+			};
+			name = Debug;
+		};
+		719FC562257F869D0087EF51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = FR47X7YWHJ;
+				INFOPLIST_FILE = CoreMediaIOPluginDemo/Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Anywii.CoreMediaIOPluginDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = plugin;
 			};
 			name = Release;
 		};
@@ -326,6 +470,15 @@
 			buildConfigurations = (
 				7122CC7C257E30DF0098A0B3 /* Debug */,
 				7122CC7D257E30DF0098A0B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		719FC563257F869D0087EF51 /* Build configuration list for PBXNativeTarget "CoreMediaIOPluginDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				719FC561257F869D0087EF51 /* Debug */,
+				719FC562257F869D0087EF51 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

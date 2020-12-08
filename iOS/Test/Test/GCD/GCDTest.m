@@ -64,4 +64,22 @@
     }
 }
 
+dispatch_source_t source;
++ (void)dispatch_time_test {
+    // 一定要强引用, 否则会崩溃
+    source = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0));
+    dispatch_time_t startTime = dispatch_time(DISPATCH_TIME_NOW, 0);
+    uint64_t intervalTime = (int64_t)(NSEC_PER_SEC * 2);
+    dispatch_source_set_timer(source, startTime, intervalTime, 0);
+    dispatch_source_set_event_handler(source, ^{
+        NSLog(@"dispatch_time_test");
+    });
+    // 不加这句block不会执行
+    dispatch_resume(source);
+    // 多次调用也会崩溃
+    // dispatch_resume(source);
+    // 暂停
+    dispatch_suspend(source);
+}
+
 @end

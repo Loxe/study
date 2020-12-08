@@ -12,8 +12,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    // Do any additional setup after loading the view.
+    
+    NSButton *button = [[NSButton alloc] initWithFrame:NSMakeRect(0, 0, 100, 100)];
+    button.title = @"214343";
+    [self.view addSubview:button];
 }
 
 
