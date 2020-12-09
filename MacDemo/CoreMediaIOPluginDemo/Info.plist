@@ -36,5 +36,9 @@
 			<string>8457B77A-D0304458-B136-8BB5335F4512 </string>
 		</array>
 	</dict>
+	<key>CMIOHardwareAssistantServiceNames</key>
+	<array>
+		<string>HZ_Name</string>
+	</array>
 </dict>
 </plist>

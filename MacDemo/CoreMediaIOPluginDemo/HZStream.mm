@@ -135,6 +135,15 @@
     CGContextTranslateCTM(context, width, 0);
     CGContextScaleCTM(context, -1.0, 1.0);
     
+    // 黑底
+    CGColorRef blackColor = CGColorCreateGenericRGB(0, 0, 0, 1);
+    
+    CGContextSetFillColorWithColor(context, blackColor);
+    CGContextFillRect(context, CGRectMake(0, 0, width, height));
+    
+    CFRelease(blackColor);
+    
+    // 文字
     NSAttributedString *string = [[NSAttributedString alloc] initWithString:@"请插入UVC摄像头" attributes:@{
         NSFontAttributeName : [NSFont systemFontOfSize:36.0f],
         NSForegroundColorAttributeName : [NSColor whiteColor],
