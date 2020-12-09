@@ -22,6 +22,7 @@
 		719FC59A257F8B040087EF51 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 719FC599257F8B040087EF51 /* CoreGraphics.framework */; };
 		719FC59E257F8B100087EF51 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 719FC59D257F8B100087EF51 /* CoreMedia.framework */; };
 		719FC5A2257F8B180087EF51 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 719FC5A1257F8B180087EF51 /* CoreVideo.framework */; };
+		71A541DB25805A1D00BE0A2E /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71A541DA25805A1D00BE0A2E /* AppKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		719FC599257F8B040087EF51 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		719FC59D257F8B100087EF51 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		719FC5A1257F8B180087EF51 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		71A541DA25805A1D00BE0A2E /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 			files = (
 				719FC59E257F8B100087EF51 /* CoreMedia.framework in Frameworks */,
 				719FC59A257F8B040087EF51 /* CoreGraphics.framework in Frameworks */,
+				71A541DB25805A1D00BE0A2E /* AppKit.framework in Frameworks */,
 				719FC596257F8AEB0087EF51 /* CoreMediaIO.framework in Frameworks */,
 				719FC5A2257F8B180087EF51 /* CoreVideo.framework in Frameworks */,
 			);
@@ -135,6 +138,7 @@
 		719FC594257F8AEB0087EF51 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				71A541DA25805A1D00BE0A2E /* AppKit.framework */,
 				719FC5A1257F8B180087EF51 /* CoreVideo.framework */,
 				719FC59D257F8B100087EF51 /* CoreMedia.framework */,
 				719FC599257F8B040087EF51 /* CoreGraphics.framework */,

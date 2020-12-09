@@ -130,22 +130,25 @@
     CGColorSpaceRef rgbColorSpace = CGColorSpaceCreateDeviceRGB();
     CGContextRef context = CGBitmapContextCreate(pxdata, width, height, 8, CVPixelBufferGetBytesPerRow(pxbuffer), rgbColorSpace, kCGImageAlphaPremultipliedFirst | kCGImageByteOrder32Big);
     NSParameterAssert(context);
-
-    double time = double(mach_absolute_time()) / NSEC_PER_SEC;
-    CGFloat pos = CGFloat(time - floor(time));
-
-    CGColorRef whiteColor = CGColorCreateGenericRGB(1, 1, 1, 1);
-    CGColorRef redColor = CGColorCreateGenericRGB(1, 0, 0, 1);
-
-    CGContextSetFillColorWithColor(context, whiteColor);
-    CGContextFillRect(context, CGRectMake(0, 0, width, height));
-
-    CGContextSetFillColorWithColor(context, redColor);
-    CGContextFillRect(context, CGRectMake(pos * width, 310, 100, 100));
-
-    CGColorRelease(whiteColor);
-    CGColorRelease(redColor);
-
+    
+    //反转
+    CGContextTranslateCTM(context, width, 0);
+    CGContextScaleCTM(context, -1.0, 1.0);
+    
+    NSAttributedString *string = [[NSAttributedString alloc] initWithString:@"请插入UVC摄像头" attributes:@{
+        NSFontAttributeName : [NSFont systemFontOfSize:36.0f],
+        NSForegroundColorAttributeName : [NSColor whiteColor],
+    }];
+    NSRect bound = [string boundingRectWithSize:NSMakeSize(width, height) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading context:nil];
+    CGMutablePathRef path = CGPathCreateMutable();
+    CGRect rect = CGRectMake((width - bound.size.width) / 2, -(height - bound.size.height) / 2, width, height);
+    CGPathAddRect(path, NULL, rect);
+    CTFramesetterRef framesetter = CTFramesetterCreateWithAttributedString((CFAttributedStringRef)string);
+    CTFrameRef frame = CTFramesetterCreateFrame(framesetter, CFRangeMake(0, string.length), path, NULL);
+    CTFrameDraw(frame, context);
+    CFRelease(framesetter);
+    CFRelease(frame);
+    
     CGColorSpaceRelease(rgbColorSpace);
     CGContextRelease(context);
 
