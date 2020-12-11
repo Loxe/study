@@ -10,6 +10,8 @@
 #import "HZPlugInInterface.h"
 #import "HZLogging.h"
 
+#import "HZXPCDelegate.h"
+
 /**
  .plugin安装目录:/Library/CoreMediaIO/Plug-Ins/DAL/
  Packaging -> Wrapper Extension: 一定要设置为plugin, xcode默认为bundle, 但 CoreMediaIO 打包成bundle, 插件无效

@@ -7,6 +7,7 @@
 
 #import "ViewController.h"
 #import <CoreMediaIO/CMIOHardwareDevice.h>
+#import "AppDelegate.h"
 
 #pragma mark - CTRunDelegateCallbacks
 void RunDelegateDeallocCallback( void* refCon ){
@@ -46,6 +47,28 @@ CGFloat RunDelegateGetWidthCallback(void *refCon){
     
     //self.imageView.image = [self coreTextWithImage];
     [self createPixelBufferWithTestAnimation];
+    
+    NSButton *button = [[NSButton alloc] initWithFrame:NSMakeRect(0, 0, 100, 40)];
+    [button setTitle:@"button"];
+    button.action = @selector(buttonAction);
+    [self.view addSubview:button];
+}
+
+- (void)buttonAction {
+    AppDelegate *delegate = [NSApplication sharedApplication].delegate;
+    [delegate.remoteObjectProxy test:@"2" reply:^(NSString *s) {
+        NSLog(@"22");
+    }];
+    
+    /*NSXPCConnection *connection = [[NSXPCConnection alloc] initWithServiceName:@"com.Anywii.XPCService"]
+    connection.remoteObjectInterface = [NSXPCInterface interfaceWithProtocol:@protocol(HZXPCProtocol)];
+    id<HZXPCProtocol> remoteObjectProxy = [connection remoteObjectProxyWithErrorHandler:^(NSError * _Nonnull error) {
+        NSLog(@"出错了: %@", error);
+    }];
+    [connection resume];
+    [remoteObjectProxy test:@"2222" reply:^(NSString *replyString) {
+        NSLog(@"收到了回复: %@", replyString);
+    }];*/
 }
 
 - (void)viewDidLayout {

@@ -12,6 +12,8 @@
 		7122CC71257E30DF0098A0B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7122CC70257E30DF0098A0B3 /* Assets.xcassets */; };
 		7122CC74257E30DF0098A0B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7122CC72257E30DF0098A0B3 /* Main.storyboard */; };
 		7122CC77257E30DF0098A0B3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7122CC76257E30DF0098A0B3 /* main.m */; };
+		718599C62583614F0076726E /* HZXPCDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 71AE6484258213930053A132 /* HZXPCDelegate.m */; };
+		718599CB2583655C0076726E /* HZXPCDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 71AE6484258213930053A132 /* HZXPCDelegate.m */; };
 		719FC569257F878C0087EF51 /* HZPlugInMain.mm in Sources */ = {isa = PBXBuildFile; fileRef = 719FC568257F878C0087EF51 /* HZPlugInMain.mm */; };
 		719FC571257F88610087EF51 /* HZPlugInInterface.mm in Sources */ = {isa = PBXBuildFile; fileRef = 719FC570257F88610087EF51 /* HZPlugInInterface.mm */; };
 		719FC57C257F89300087EF51 /* HZObjectStore.mm in Sources */ = {isa = PBXBuildFile; fileRef = 719FC57B257F89300087EF51 /* HZObjectStore.mm */; };
@@ -23,7 +25,42 @@
 		719FC59E257F8B100087EF51 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 719FC59D257F8B100087EF51 /* CoreMedia.framework */; };
 		719FC5A2257F8B180087EF51 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 719FC5A1257F8B180087EF51 /* CoreVideo.framework */; };
 		71A541DB25805A1D00BE0A2E /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71A541DA25805A1D00BE0A2E /* AppKit.framework */; };
+		71AE640E2581C4910053A132 /* IOSurface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71AE640D2581C4910053A132 /* IOSurface.framework */; };
+		71AE64122581C49F0053A132 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71AE64112581C49F0053A132 /* Cocoa.framework */; };
+		71AE649B258225CF0053A132 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 71AE649A258225CF0053A132 /* main.m */; };
+		71AE649F258225CF0053A132 /* XPCService.xpc in Embed XPC Services */ = {isa = PBXBuildFile; fileRef = 71AE6494258225CF0053A132 /* XPCService.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		71AE64A7258225ED0053A132 /* HZXPCDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 71AE6484258213930053A132 /* HZXPCDelegate.m */; };
+		71AE64BF258244720053A132 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 71AE64BE258244720053A132 /* AppDelegate.m */; };
+		71AE64C2258244720053A132 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71AE64C1258244720053A132 /* ViewController.m */; };
+		71AE64C4258244740053A132 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71AE64C3258244740053A132 /* Assets.xcassets */; };
+		71AE64C7258244740053A132 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71AE64C5258244740053A132 /* Main.storyboard */; };
+		71AE64CA258244740053A132 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 71AE64C9258244740053A132 /* main.m */; };
+		71FD4CBA2580ED8C00D6D840 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71FD4CB92580ED8C00D6D840 /* Foundation.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		71AE649D258225CF0053A132 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7122CC5F257E30DC0098A0B3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 71AE6493258225CF0053A132;
+			remoteInfo = XPCService;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		71AE64A3258225CF0053A132 /* Embed XPC Services */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/XPCServices";
+			dstSubfolderSpec = 16;
+			files = (
+				71AE649F258225CF0053A132 /* XPCService.xpc in Embed XPC Services */,
+			);
+			name = "Embed XPC Services";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		7122CC67257E30DC0098A0B3 /* MacDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,6 +73,7 @@
 		7122CC75257E30DF0098A0B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7122CC76257E30DF0098A0B3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7122CC78257E30DF0098A0B3 /* MacDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacDemo.entitlements; sourceTree = "<group>"; };
+		718599D125837BC70076726E /* HZGLobalHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZGLobalHeader.h; sourceTree = "<group>"; };
 		719FC550257F869D0087EF51 /* CoreMediaIOPluginDemo.plugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreMediaIOPluginDemo.plugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		719FC55D257F869D0087EF51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		719FC568257F878C0087EF51 /* HZPlugInMain.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HZPlugInMain.mm; sourceTree = "<group>"; };
@@ -55,6 +93,55 @@
 		719FC59D257F8B100087EF51 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		719FC5A1257F8B180087EF51 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		71A541DA25805A1D00BE0A2E /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		71AE640D2581C4910053A132 /* IOSurface.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOSurface.framework; path = System/Library/Frameworks/IOSurface.framework; sourceTree = SDKROOT; };
+		71AE64112581C49F0053A132 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		71AE64152581C4AC0053A132 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		71AE64192581C4B70053A132 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		71AE6483258213930053A132 /* HZXPCDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZXPCDelegate.h; sourceTree = "<group>"; };
+		71AE6484258213930053A132 /* HZXPCDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZXPCDelegate.m; sourceTree = "<group>"; };
+		71AE6488258213AF0053A132 /* HZXPCProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZXPCProtocol.h; sourceTree = "<group>"; };
+		71AE6494258225CF0053A132 /* XPCService.xpc */ = {isa = PBXFileReference; explicitFileType = "wrapper.xpc-service"; includeInIndex = 0; path = XPCService.xpc; sourceTree = BUILT_PRODUCTS_DIR; };
+		71AE649A258225CF0053A132 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		71AE649C258225CF0053A132 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71AE64BB258244720053A132 /* MachPortDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MachPortDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		71AE64BD258244720053A132 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		71AE64BE258244720053A132 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		71AE64C0258244720053A132 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		71AE64C1258244720053A132 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		71AE64C3258244740053A132 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		71AE64C6258244740053A132 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		71AE64C8258244740053A132 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71AE64C9258244740053A132 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		71AE64CB258244740053A132 /* MachPortDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MachPortDemo.entitlements; sourceTree = "<group>"; };
+		71FD4C762580D26A00D6D840 /* MachServer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MachServer.h; sourceTree = "<group>"; };
+		71FD4C772580D26A00D6D840 /* CMakeLists.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
+		71FD4C782580D26A00D6D840 /* Defines.h.in */ = {isa = PBXFileReference; lastKnownFileType = text; path = Defines.h.in; sourceTree = "<group>"; };
+		71FD4C792580D26A00D6D840 /* plugin-main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "plugin-main.mm"; sourceTree = "<group>"; };
+		71FD4C7C2580D26A00D6D840 /* en-US.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = "en-US.ini"; sourceTree = "<group>"; };
+		71FD4C7D2580D26A00D6D840 /* MachServer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = MachServer.mm; sourceTree = "<group>"; };
+		71FD4C7F2580D26A00D6D840 /* MachProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MachProtocol.h; sourceTree = "<group>"; };
+		71FD4C812580D26A00D6D840 /* OBSDALTestCard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OBSDALTestCard.h; sourceTree = "<group>"; };
+		71FD4C822580D26A00D6D840 /* CMakeLists.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
+		71FD4C832580D26A00D6D840 /* OBSDALPlugIn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OBSDALPlugIn.h; sourceTree = "<group>"; };
+		71FD4C842580D26A00D6D840 /* OBSDALDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OBSDALDevice.h; sourceTree = "<group>"; };
+		71FD4C852580D26A00D6D840 /* OBSDALMachClient.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OBSDALMachClient.mm; sourceTree = "<group>"; };
+		71FD4C862580D26A00D6D840 /* OBSDALDevice.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OBSDALDevice.mm; sourceTree = "<group>"; };
+		71FD4C872580D26A00D6D840 /* OBSDALPlugInInterface.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OBSDALPlugInInterface.mm; sourceTree = "<group>"; };
+		71FD4C882580D26A00D6D840 /* OBSDALStream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OBSDALStream.h; sourceTree = "<group>"; };
+		71FD4C892580D26A00D6D840 /* Logging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Logging.h; sourceTree = "<group>"; };
+		71FD4C8A2580D26A00D6D840 /* OBSDALStream.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OBSDALStream.mm; sourceTree = "<group>"; };
+		71FD4C8B2580D26A00D6D840 /* OBSDALObjectStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OBSDALObjectStore.h; sourceTree = "<group>"; };
+		71FD4C8C2580D26A00D6D840 /* OBSDALMachClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OBSDALMachClient.h; sourceTree = "<group>"; };
+		71FD4C8D2580D26A00D6D840 /* Defines.h.in */ = {isa = PBXFileReference; lastKnownFileType = text; path = Defines.h.in; sourceTree = "<group>"; };
+		71FD4C8E2580D26A00D6D840 /* OBSDALTestCard.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OBSDALTestCard.mm; sourceTree = "<group>"; };
+		71FD4C8F2580D26A00D6D840 /* OBSDALObjectStore.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OBSDALObjectStore.mm; sourceTree = "<group>"; };
+		71FD4C902580D26A00D6D840 /* OBSDALPlugIn.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OBSDALPlugIn.mm; sourceTree = "<group>"; };
+		71FD4C912580D26A00D6D840 /* OBSDALPlugInMain.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OBSDALPlugInMain.mm; sourceTree = "<group>"; };
+		71FD4C922580D26A00D6D840 /* OBSDALCMSampleBufferUtils.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OBSDALCMSampleBufferUtils.mm; sourceTree = "<group>"; };
+		71FD4C932580D26A00D6D840 /* OBSDALCMSampleBufferUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OBSDALCMSampleBufferUtils.h; sourceTree = "<group>"; };
+		71FD4C942580D26A00D6D840 /* OBSDALPlugInInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OBSDALPlugInInterface.h; sourceTree = "<group>"; };
+		71FD4C952580D26A00D6D840 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71FD4CB92580ED8C00D6D840 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +149,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71AE640E2581C4910053A132 /* IOSurface.framework in Frameworks */,
+				71FD4CBA2580ED8C00D6D840 /* Foundation.framework in Frameworks */,
+				71AE64122581C49F0053A132 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,14 +167,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		71AE6491258225CF0053A132 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71AE64B8258244720053A132 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		7122CC5E257E30DC0098A0B3 = {
 			isa = PBXGroup;
 			children = (
+				718599D025837B630076726E /* GlobalFile */,
 				7122CC69257E30DC0098A0B3 /* MacDemo */,
 				719FC551257F869D0087EF51 /* CoreMediaIOPluginDemo */,
+				71AE6495258225CF0053A132 /* XPCService */,
+				71AE64BC258244720053A132 /* MachPortDemo */,
 				7122CC68257E30DC0098A0B3 /* Products */,
 				719FC594257F8AEB0087EF51 /* Frameworks */,
 			);
@@ -95,6 +202,8 @@
 			children = (
 				7122CC67257E30DC0098A0B3 /* MacDemo.app */,
 				719FC550257F869D0087EF51 /* CoreMediaIOPluginDemo.plugin */,
+				71AE6494258225CF0053A132 /* XPCService.xpc */,
+				71AE64BB258244720053A132 /* MachPortDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -102,6 +211,7 @@
 		7122CC69257E30DC0098A0B3 /* MacDemo */ = {
 			isa = PBXGroup;
 			children = (
+				71FD4C742580D26A00D6D840 /* src */,
 				7122CC6A257E30DC0098A0B3 /* AppDelegate.h */,
 				7122CC6B257E30DC0098A0B3 /* AppDelegate.m */,
 				7122CC6D257E30DC0098A0B3 /* ViewController.h */,
@@ -113,6 +223,17 @@
 				7122CC78257E30DF0098A0B3 /* MacDemo.entitlements */,
 			);
 			path = MacDemo;
+			sourceTree = "<group>";
+		};
+		718599D025837B630076726E /* GlobalFile */ = {
+			isa = PBXGroup;
+			children = (
+				71AE6488258213AF0053A132 /* HZXPCProtocol.h */,
+				71AE6483258213930053A132 /* HZXPCDelegate.h */,
+				71AE6484258213930053A132 /* HZXPCDelegate.m */,
+				718599D125837BC70076726E /* HZGLobalHeader.h */,
+			);
+			path = GlobalFile;
 			sourceTree = "<group>";
 		};
 		719FC551257F869D0087EF51 /* CoreMediaIOPluginDemo */ = {
@@ -138,6 +259,11 @@
 		719FC594257F8AEB0087EF51 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				71AE64192581C4B70053A132 /* OpenGL.framework */,
+				71AE64152581C4AC0053A132 /* GLKit.framework */,
+				71AE64112581C49F0053A132 /* Cocoa.framework */,
+				71AE640D2581C4910053A132 /* IOSurface.framework */,
+				71FD4CB92580ED8C00D6D840 /* Foundation.framework */,
 				71A541DA25805A1D00BE0A2E /* AppKit.framework */,
 				719FC5A1257F8B180087EF51 /* CoreVideo.framework */,
 				719FC59D257F8B100087EF51 /* CoreMedia.framework */,
@@ -145,6 +271,107 @@
 				719FC595257F8AEB0087EF51 /* CoreMediaIO.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		71AE6495258225CF0053A132 /* XPCService */ = {
+			isa = PBXGroup;
+			children = (
+				71AE649A258225CF0053A132 /* main.m */,
+				71AE649C258225CF0053A132 /* Info.plist */,
+			);
+			path = XPCService;
+			sourceTree = "<group>";
+		};
+		71AE64BC258244720053A132 /* MachPortDemo */ = {
+			isa = PBXGroup;
+			children = (
+				71AE64BD258244720053A132 /* AppDelegate.h */,
+				71AE64BE258244720053A132 /* AppDelegate.m */,
+				71AE64C0258244720053A132 /* ViewController.h */,
+				71AE64C1258244720053A132 /* ViewController.m */,
+				71AE64C3258244740053A132 /* Assets.xcassets */,
+				71AE64C5258244740053A132 /* Main.storyboard */,
+				71AE64C8258244740053A132 /* Info.plist */,
+				71AE64C9258244740053A132 /* main.m */,
+				71AE64CB258244740053A132 /* MachPortDemo.entitlements */,
+			);
+			path = MachPortDemo;
+			sourceTree = "<group>";
+		};
+		71FD4C742580D26A00D6D840 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				71FD4C752580D26A00D6D840 /* obs-plugin */,
+				71FD4C7E2580D26A00D6D840 /* common */,
+				71FD4C802580D26A00D6D840 /* dal-plugin */,
+			);
+			name = src;
+			path = "../../../../../../Downloads/obs-mac-virtualcam-master/src";
+			sourceTree = "<group>";
+		};
+		71FD4C752580D26A00D6D840 /* obs-plugin */ = {
+			isa = PBXGroup;
+			children = (
+				71FD4C762580D26A00D6D840 /* MachServer.h */,
+				71FD4C7D2580D26A00D6D840 /* MachServer.mm */,
+				71FD4C772580D26A00D6D840 /* CMakeLists.txt */,
+				71FD4C782580D26A00D6D840 /* Defines.h.in */,
+				71FD4C792580D26A00D6D840 /* plugin-main.mm */,
+				71FD4C7A2580D26A00D6D840 /* data */,
+			);
+			path = "obs-plugin";
+			sourceTree = "<group>";
+		};
+		71FD4C7A2580D26A00D6D840 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				71FD4C7B2580D26A00D6D840 /* locale */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		71FD4C7B2580D26A00D6D840 /* locale */ = {
+			isa = PBXGroup;
+			children = (
+				71FD4C7C2580D26A00D6D840 /* en-US.ini */,
+			);
+			path = locale;
+			sourceTree = "<group>";
+		};
+		71FD4C7E2580D26A00D6D840 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				71FD4C7F2580D26A00D6D840 /* MachProtocol.h */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		71FD4C802580D26A00D6D840 /* dal-plugin */ = {
+			isa = PBXGroup;
+			children = (
+				71FD4C822580D26A00D6D840 /* CMakeLists.txt */,
+				71FD4C8D2580D26A00D6D840 /* Defines.h.in */,
+				71FD4C912580D26A00D6D840 /* OBSDALPlugInMain.mm */,
+				71FD4C892580D26A00D6D840 /* Logging.h */,
+				71FD4C832580D26A00D6D840 /* OBSDALPlugIn.h */,
+				71FD4C902580D26A00D6D840 /* OBSDALPlugIn.mm */,
+				71FD4C842580D26A00D6D840 /* OBSDALDevice.h */,
+				71FD4C862580D26A00D6D840 /* OBSDALDevice.mm */,
+				71FD4C8C2580D26A00D6D840 /* OBSDALMachClient.h */,
+				71FD4C852580D26A00D6D840 /* OBSDALMachClient.mm */,
+				71FD4C882580D26A00D6D840 /* OBSDALStream.h */,
+				71FD4C8A2580D26A00D6D840 /* OBSDALStream.mm */,
+				71FD4C8B2580D26A00D6D840 /* OBSDALObjectStore.h */,
+				71FD4C8F2580D26A00D6D840 /* OBSDALObjectStore.mm */,
+				71FD4C812580D26A00D6D840 /* OBSDALTestCard.h */,
+				71FD4C8E2580D26A00D6D840 /* OBSDALTestCard.mm */,
+				71FD4C932580D26A00D6D840 /* OBSDALCMSampleBufferUtils.h */,
+				71FD4C922580D26A00D6D840 /* OBSDALCMSampleBufferUtils.mm */,
+				71FD4C942580D26A00D6D840 /* OBSDALPlugInInterface.h */,
+				71FD4C872580D26A00D6D840 /* OBSDALPlugInInterface.mm */,
+				71FD4C952580D26A00D6D840 /* Info.plist */,
+			);
+			path = "dal-plugin";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,10 +384,12 @@
 				7122CC63257E30DC0098A0B3 /* Sources */,
 				7122CC64257E30DC0098A0B3 /* Frameworks */,
 				7122CC65257E30DC0098A0B3 /* Resources */,
+				71AE64A3258225CF0053A132 /* Embed XPC Services */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				71AE649E258225CF0053A132 /* PBXTargetDependency */,
 			);
 			name = MacDemo;
 			productName = MacDemo;
@@ -184,6 +413,40 @@
 			productReference = 719FC550257F869D0087EF51 /* CoreMediaIOPluginDemo.plugin */;
 			productType = "com.apple.product-type.bundle";
 		};
+		71AE6493258225CF0053A132 /* XPCService */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 71AE64A0258225CF0053A132 /* Build configuration list for PBXNativeTarget "XPCService" */;
+			buildPhases = (
+				71AE6490258225CF0053A132 /* Sources */,
+				71AE6491258225CF0053A132 /* Frameworks */,
+				71AE6492258225CF0053A132 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XPCService;
+			productName = XPCService;
+			productReference = 71AE6494258225CF0053A132 /* XPCService.xpc */;
+			productType = "com.apple.product-type.xpc-service";
+		};
+		71AE64BA258244720053A132 /* MachPortDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 71AE64CC258244740053A132 /* Build configuration list for PBXNativeTarget "MachPortDemo" */;
+			buildPhases = (
+				71AE64B7258244720053A132 /* Sources */,
+				71AE64B8258244720053A132 /* Frameworks */,
+				71AE64B9258244720053A132 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MachPortDemo;
+			productName = MachPortDemo;
+			productReference = 71AE64BB258244720053A132 /* MachPortDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -196,6 +459,12 @@
 						CreatedOnToolsVersion = 12.2;
 					};
 					719FC54F257F869D0087EF51 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					71AE6493258225CF0053A132 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					71AE64BA258244720053A132 = {
 						CreatedOnToolsVersion = 12.2;
 					};
 				};
@@ -215,6 +484,8 @@
 			targets = (
 				7122CC66257E30DC0098A0B3 /* MacDemo */,
 				719FC54F257F869D0087EF51 /* CoreMediaIOPluginDemo */,
+				71AE6493258225CF0053A132 /* XPCService */,
+				71AE64BA258244720053A132 /* MachPortDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -236,6 +507,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		71AE6492258225CF0053A132 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71AE64B9258244720053A132 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71AE64C4258244740053A132 /* Assets.xcassets in Resources */,
+				71AE64C7258244740053A132 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -254,6 +541,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				719FC571257F88610087EF51 /* HZPlugInInterface.mm in Sources */,
+				718599C62583614F0076726E /* HZXPCDelegate.m in Sources */,
 				719FC57C257F89300087EF51 /* HZObjectStore.mm in Sources */,
 				719FC583257F89FC0087EF51 /* HZPlugIn.mm in Sources */,
 				719FC588257F8A2D0087EF51 /* HZDevice.mm in Sources */,
@@ -262,13 +550,49 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		71AE6490258225CF0053A132 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71AE649B258225CF0053A132 /* main.m in Sources */,
+				71AE64A7258225ED0053A132 /* HZXPCDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71AE64B7258244720053A132 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71AE64C2258244720053A132 /* ViewController.m in Sources */,
+				71AE64CA258244740053A132 /* main.m in Sources */,
+				718599CB2583655C0076726E /* HZXPCDelegate.m in Sources */,
+				71AE64BF258244720053A132 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		71AE649E258225CF0053A132 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 71AE6493258225CF0053A132 /* XPCService */;
+			targetProxy = 71AE649D258225CF0053A132 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		7122CC72257E30DF0098A0B3 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				7122CC73257E30DF0098A0B3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		71AE64C5258244740053A132 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				71AE64C6258244740053A132 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -392,19 +716,29 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = NO;
+				CLANG_WARN_SUSPICIOUS_MOVE = NO;
 				CODE_SIGN_ENTITLEMENTS = MacDemo/MacDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = FR47X7YWHJ;
-				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_HARDENED_RUNTIME = NO;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
+				GCC_NO_COMMON_BLOCKS = NO;
 				INFOPLIST_FILE = MacDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Anywii.MacDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VERSIONING_SYSTEM = "";
 			};
 			name = Debug;
 		};
@@ -413,19 +747,30 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = NO;
+				CLANG_WARN_SUSPICIOUS_MOVE = NO;
 				CODE_SIGN_ENTITLEMENTS = MacDemo/MacDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
 				DEVELOPMENT_TEAM = FR47X7YWHJ;
-				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_HARDENED_RUNTIME = NO;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
+				GCC_NO_COMMON_BLOCKS = NO;
 				INFOPLIST_FILE = MacDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Anywii.MacDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VERSIONING_SYSTEM = "";
 			};
 			name = Release;
 		};
@@ -457,6 +802,76 @@
 			};
 			name = Release;
 		};
+		71AE64A1258225CF0053A132 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = FR47X7YWHJ;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = XPCService/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Anywii.XPCService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		71AE64A2258225CF0053A132 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = FR47X7YWHJ;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = XPCService/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Anywii.XPCService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		71AE64CD258244740053A132 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MachPortDemo/MachPortDemo.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = FR47X7YWHJ;
+				ENABLE_HARDENED_RUNTIME = NO;
+				INFOPLIST_FILE = MachPortDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Anywii.MachPortDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		71AE64CE258244740053A132 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MachPortDemo/MachPortDemo.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = FR47X7YWHJ;
+				ENABLE_HARDENED_RUNTIME = NO;
+				INFOPLIST_FILE = MachPortDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Anywii.MachPortDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -483,6 +898,24 @@
 			buildConfigurations = (
 				719FC561257F869D0087EF51 /* Debug */,
 				719FC562257F869D0087EF51 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		71AE64A0258225CF0053A132 /* Build configuration list for PBXNativeTarget "XPCService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				71AE64A1258225CF0053A132 /* Debug */,
+				71AE64A2258225CF0053A132 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		71AE64CC258244740053A132 /* Build configuration list for PBXNativeTarget "MachPortDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				71AE64CD258244740053A132 /* Debug */,
+				71AE64CE258244740053A132 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

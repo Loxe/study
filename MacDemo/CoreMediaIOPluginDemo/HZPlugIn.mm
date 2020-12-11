@@ -11,6 +11,8 @@
 
 #import "HZLogging.h"
 
+#import "HZXPCDelegate.h"
+
 @implementation HZPlugIn
 
 + (HZPlugIn *)SharedPlugIn {
@@ -18,6 +20,13 @@
     static dispatch_once_t sOnceToken;
     dispatch_once(&sOnceToken, ^{
         sPlugIn = [[self alloc] init];
+        // 这个方法只能用在 XPC 服务中, 具 resume 后, 不会返回, 用在其它地方会报错
+        //NSXPCListener *listener = [NSXPCListener serviceListener];
+        //[listener resume];
+        // 其它地方用下面方法或者 [NSXPCListener anonymousListener]
+        NSXPCListener *listener = [[NSXPCListener alloc] initWithMachServiceName:@"com.Anywii.CoreMediaIOPluginDemo"];
+        listener.delegate = [HZXPCDelegate manager];
+        [listener resume];
     });
     return sPlugIn;
 }
