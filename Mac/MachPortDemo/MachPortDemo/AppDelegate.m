@@ -2,28 +2,26 @@
 //  AppDelegate.m
 //  MachPortDemo
 //
-//  Created by JinTao on 2020/12/10.
+//  Created by JinTao on 2020/12/14.
 //
 
 #import "AppDelegate.h"
 #import "HZXPCDelegate.h"
-#import "HZGLobalHeader.h"
+#import "HZIPCGLobalHeader.h"
+#import "HZIPCMachClient.h"
 
 @interface AppDelegate ()
-
 
 @end
 
 @implementation AppDelegate
-
 - (void)applicationWillFinishLaunching:(NSNotification *)notification {
     //[self nsConnectionTest];
     //[self XPCTest];
-    [self machBootstrapServerTest];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    
+    // Insert code here to initialize your application
 }
 
 
@@ -46,13 +44,11 @@
 - (void)nsConnectionTest {
     //这样就可以通过name取得注册的NSConnection的代理对象
     NSDistantObject *distantObject = [NSConnection rootProxyForConnectionWithRegisteredName:@"com.Anywii.MacDemo" host:nil];
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
     //调用代理对象中的方法，就跟普通对象一样，当然如果为了让代理对象的方法可见，可以定义公共的协议protocol
     [distantObject performSelector:@selector(connectionTest)];
-}
-
-#pragma mark - NSMachBootstrapServer Test
-- (void)machBootstrapServerTest {
-    [[NSMachBootstrapServer sharedInstance] portForName:HZMachBootstrapPortName];
+#pragma clang diagnostic pop
 }
 
 @end

@@ -1,0 +1,520 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7180F0FC2587476B00722DDA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7180F0FB2587476B00722DDA /* AppDelegate.m */; };
+		7180F0FF2587476B00722DDA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7180F0FE2587476B00722DDA /* ViewController.m */; };
+		7180F1012587476D00722DDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7180F1002587476D00722DDA /* Assets.xcassets */; };
+		7180F1042587476D00722DDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7180F1022587476D00722DDA /* Main.storyboard */; };
+		7180F1072587476D00722DDA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7180F1062587476D00722DDA /* main.m */; };
+		7180F18925874AEE00722DDA /* HZDevice.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7180F17D25874AED00722DDA /* HZDevice.mm */; };
+		7180F18A25874AEE00722DDA /* HZObjectStore.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7180F18025874AEE00722DDA /* HZObjectStore.mm */; };
+		7180F18B25874AEE00722DDA /* HZPlugInInterface.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7180F18225874AEE00722DDA /* HZPlugInInterface.mm */; };
+		7180F18C25874AEE00722DDA /* HZStream.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7180F18525874AEE00722DDA /* HZStream.mm */; };
+		7180F18D25874AEE00722DDA /* HZPlugIn.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7180F18625874AEE00722DDA /* HZPlugIn.mm */; };
+		7180F18E25874AEE00722DDA /* HZPlugInMain.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7180F18825874AEE00722DDA /* HZPlugInMain.mm */; };
+		7180F19E25874B3700722DDA /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7180F19D25874B3700722DDA /* AppKit.framework */; };
+		7180F1A225874B4000722DDA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7180F1A125874B4000722DDA /* CoreGraphics.framework */; };
+		7180F1A625874B4B00722DDA /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7180F1A525874B4B00722DDA /* CoreMedia.framework */; };
+		7180F1AA25874B5400722DDA /* CoreMediaIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7180F1A925874B5400722DDA /* CoreMediaIO.framework */; };
+		7180F1AE25874B5C00722DDA /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7180F1AD25874B5C00722DDA /* CoreVideo.framework */; };
+		7180F1DD25874D4400722DDA /* HZIPCMachClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 7180F1DA25874D4400722DDA /* HZIPCMachClient.m */; };
+		7180F1DE25874D4400722DDA /* HZXPCDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7180F1DC25874D4400722DDA /* HZXPCDelegate.m */; };
+		7180F1E325874D8300722DDA /* HZXPCDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7180F1DC25874D4400722DDA /* HZXPCDelegate.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7180F0F72587476B00722DDA /* MachPortDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MachPortDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7180F0FA2587476B00722DDA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		7180F0FB2587476B00722DDA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7180F0FD2587476B00722DDA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		7180F0FE2587476B00722DDA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		7180F1002587476D00722DDA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7180F1032587476D00722DDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7180F1052587476D00722DDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7180F1062587476D00722DDA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7180F1082587476D00722DDA /* MachPortDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MachPortDemo.entitlements; sourceTree = "<group>"; };
+		7180F14D258749C800722DDA /* CoreMediaIOPluginDemo.plugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreMediaIOPluginDemo.plugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		7180F15A258749C800722DDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7180F17D25874AED00722DDA /* HZDevice.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = HZDevice.mm; sourceTree = "<group>"; };
+		7180F17E25874AED00722DDA /* HZObjectStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZObjectStore.h; sourceTree = "<group>"; };
+		7180F17F25874AED00722DDA /* HZLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZLogging.h; sourceTree = "<group>"; };
+		7180F18025874AEE00722DDA /* HZObjectStore.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = HZObjectStore.mm; sourceTree = "<group>"; };
+		7180F18125874AEE00722DDA /* HZStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZStream.h; sourceTree = "<group>"; };
+		7180F18225874AEE00722DDA /* HZPlugInInterface.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = HZPlugInInterface.mm; sourceTree = "<group>"; };
+		7180F18325874AEE00722DDA /* HZPlugIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZPlugIn.h; sourceTree = "<group>"; };
+		7180F18425874AEE00722DDA /* HZDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZDevice.h; sourceTree = "<group>"; };
+		7180F18525874AEE00722DDA /* HZStream.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = HZStream.mm; sourceTree = "<group>"; };
+		7180F18625874AEE00722DDA /* HZPlugIn.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = HZPlugIn.mm; sourceTree = "<group>"; };
+		7180F18725874AEE00722DDA /* HZPlugInInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZPlugInInterface.h; sourceTree = "<group>"; };
+		7180F18825874AEE00722DDA /* HZPlugInMain.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = HZPlugInMain.mm; sourceTree = "<group>"; };
+		7180F19D25874B3700722DDA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		7180F1A125874B4000722DDA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		7180F1A525874B4B00722DDA /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		7180F1A925874B5400722DDA /* CoreMediaIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMediaIO.framework; path = System/Library/Frameworks/CoreMediaIO.framework; sourceTree = SDKROOT; };
+		7180F1AD25874B5C00722DDA /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		7180F1D725874D4400722DDA /* HZIPCMachClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZIPCMachClient.h; sourceTree = "<group>"; };
+		7180F1D825874D4400722DDA /* HZXPCProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZXPCProtocol.h; sourceTree = "<group>"; };
+		7180F1D925874D4400722DDA /* HZXPCDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZXPCDelegate.h; sourceTree = "<group>"; };
+		7180F1DA25874D4400722DDA /* HZIPCMachClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZIPCMachClient.m; sourceTree = "<group>"; };
+		7180F1DB25874D4400722DDA /* HZIPCGLobalHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZIPCGLobalHeader.h; sourceTree = "<group>"; };
+		7180F1DC25874D4400722DDA /* HZXPCDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZXPCDelegate.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7180F0F42587476B00722DDA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7180F14A258749C800722DDA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7180F1A625874B4B00722DDA /* CoreMedia.framework in Frameworks */,
+				7180F1A225874B4000722DDA /* CoreGraphics.framework in Frameworks */,
+				7180F1AA25874B5400722DDA /* CoreMediaIO.framework in Frameworks */,
+				7180F19E25874B3700722DDA /* AppKit.framework in Frameworks */,
+				7180F1AE25874B5C00722DDA /* CoreVideo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7180F0EE2587476B00722DDA = {
+			isa = PBXGroup;
+			children = (
+				7180F1D625874D4400722DDA /* GlobalFile */,
+				7180F0F92587476B00722DDA /* MachPortDemo */,
+				7180F14E258749C800722DDA /* CoreMediaIOPluginDemo */,
+				7180F0F82587476B00722DDA /* Products */,
+				7180F19C25874B3700722DDA /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		7180F0F82587476B00722DDA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7180F0F72587476B00722DDA /* MachPortDemo.app */,
+				7180F14D258749C800722DDA /* CoreMediaIOPluginDemo.plugin */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7180F0F92587476B00722DDA /* MachPortDemo */ = {
+			isa = PBXGroup;
+			children = (
+				7180F0FA2587476B00722DDA /* AppDelegate.h */,
+				7180F0FB2587476B00722DDA /* AppDelegate.m */,
+				7180F0FD2587476B00722DDA /* ViewController.h */,
+				7180F0FE2587476B00722DDA /* ViewController.m */,
+				7180F1002587476D00722DDA /* Assets.xcassets */,
+				7180F1022587476D00722DDA /* Main.storyboard */,
+				7180F1052587476D00722DDA /* Info.plist */,
+				7180F1062587476D00722DDA /* main.m */,
+				7180F1082587476D00722DDA /* MachPortDemo.entitlements */,
+			);
+			path = MachPortDemo;
+			sourceTree = "<group>";
+		};
+		7180F14E258749C800722DDA /* CoreMediaIOPluginDemo */ = {
+			isa = PBXGroup;
+			children = (
+				7180F15A258749C800722DDA /* Info.plist */,
+				7180F18425874AEE00722DDA /* HZDevice.h */,
+				7180F17D25874AED00722DDA /* HZDevice.mm */,
+				7180F17F25874AED00722DDA /* HZLogging.h */,
+				7180F17E25874AED00722DDA /* HZObjectStore.h */,
+				7180F18025874AEE00722DDA /* HZObjectStore.mm */,
+				7180F18325874AEE00722DDA /* HZPlugIn.h */,
+				7180F18625874AEE00722DDA /* HZPlugIn.mm */,
+				7180F18725874AEE00722DDA /* HZPlugInInterface.h */,
+				7180F18225874AEE00722DDA /* HZPlugInInterface.mm */,
+				7180F18825874AEE00722DDA /* HZPlugInMain.mm */,
+				7180F18125874AEE00722DDA /* HZStream.h */,
+				7180F18525874AEE00722DDA /* HZStream.mm */,
+			);
+			path = CoreMediaIOPluginDemo;
+			sourceTree = "<group>";
+		};
+		7180F19C25874B3700722DDA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7180F1AD25874B5C00722DDA /* CoreVideo.framework */,
+				7180F1A925874B5400722DDA /* CoreMediaIO.framework */,
+				7180F1A525874B4B00722DDA /* CoreMedia.framework */,
+				7180F1A125874B4000722DDA /* CoreGraphics.framework */,
+				7180F19D25874B3700722DDA /* AppKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7180F1D625874D4400722DDA /* GlobalFile */ = {
+			isa = PBXGroup;
+			children = (
+				7180F1D725874D4400722DDA /* HZIPCMachClient.h */,
+				7180F1DA25874D4400722DDA /* HZIPCMachClient.m */,
+				7180F1D925874D4400722DDA /* HZXPCDelegate.h */,
+				7180F1DC25874D4400722DDA /* HZXPCDelegate.m */,
+				7180F1D825874D4400722DDA /* HZXPCProtocol.h */,
+				7180F1DB25874D4400722DDA /* HZIPCGLobalHeader.h */,
+			);
+			name = GlobalFile;
+			path = ../GlobalFile;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7180F0F62587476B00722DDA /* MachPortDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7180F10B2587476D00722DDA /* Build configuration list for PBXNativeTarget "MachPortDemo" */;
+			buildPhases = (
+				7180F0F32587476B00722DDA /* Sources */,
+				7180F0F42587476B00722DDA /* Frameworks */,
+				7180F0F52587476B00722DDA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MachPortDemo;
+			productName = MachPortDemo;
+			productReference = 7180F0F72587476B00722DDA /* MachPortDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7180F14C258749C800722DDA /* CoreMediaIOPluginDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7180F15E258749C800722DDA /* Build configuration list for PBXNativeTarget "CoreMediaIOPluginDemo" */;
+			buildPhases = (
+				7180F149258749C800722DDA /* Sources */,
+				7180F14A258749C800722DDA /* Frameworks */,
+				7180F14B258749C800722DDA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CoreMediaIOPluginDemo;
+			productName = CoreMediaIOPluginDemo;
+			productReference = 7180F14D258749C800722DDA /* CoreMediaIOPluginDemo.plugin */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7180F0EF2587476B00722DDA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1220;
+				TargetAttributes = {
+					7180F0F62587476B00722DDA = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					7180F14C258749C800722DDA = {
+						CreatedOnToolsVersion = 12.2;
+					};
+				};
+			};
+			buildConfigurationList = 7180F0F22587476B00722DDA /* Build configuration list for PBXProject "MachPortDemo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7180F0EE2587476B00722DDA;
+			productRefGroup = 7180F0F82587476B00722DDA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7180F0F62587476B00722DDA /* MachPortDemo */,
+				7180F14C258749C800722DDA /* CoreMediaIOPluginDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7180F0F52587476B00722DDA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7180F1012587476D00722DDA /* Assets.xcassets in Resources */,
+				7180F1042587476D00722DDA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7180F14B258749C800722DDA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7180F0F32587476B00722DDA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7180F1DE25874D4400722DDA /* HZXPCDelegate.m in Sources */,
+				7180F0FF2587476B00722DDA /* ViewController.m in Sources */,
+				7180F1072587476D00722DDA /* main.m in Sources */,
+				7180F1DD25874D4400722DDA /* HZIPCMachClient.m in Sources */,
+				7180F0FC2587476B00722DDA /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7180F149258749C800722DDA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7180F18A25874AEE00722DDA /* HZObjectStore.mm in Sources */,
+				7180F1E325874D8300722DDA /* HZXPCDelegate.m in Sources */,
+				7180F18C25874AEE00722DDA /* HZStream.mm in Sources */,
+				7180F18925874AEE00722DDA /* HZDevice.mm in Sources */,
+				7180F18B25874AEE00722DDA /* HZPlugInInterface.mm in Sources */,
+				7180F18D25874AEE00722DDA /* HZPlugIn.mm in Sources */,
+				7180F18E25874AEE00722DDA /* HZPlugInMain.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7180F1022587476D00722DDA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7180F1032587476D00722DDA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7180F1092587476D00722DDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		7180F10A2587476D00722DDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		7180F10C2587476D00722DDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MachPortDemo/MachPortDemo.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = FR47X7YWHJ;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = MachPortDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Anywii.MachPortDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7180F10D2587476D00722DDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MachPortDemo/MachPortDemo.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = FR47X7YWHJ;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = MachPortDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Anywii.MachPortDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		7180F15F258749C800722DDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = FR47X7YWHJ;
+				INFOPLIST_FILE = CoreMediaIOPluginDemo/Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Anywii.CoreMediaIOPluginDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = plugin;
+			};
+			name = Debug;
+		};
+		7180F160258749C800722DDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = FR47X7YWHJ;
+				INFOPLIST_FILE = CoreMediaIOPluginDemo/Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Anywii.CoreMediaIOPluginDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = plugin;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7180F0F22587476B00722DDA /* Build configuration list for PBXProject "MachPortDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7180F1092587476D00722DDA /* Debug */,
+				7180F10A2587476D00722DDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7180F10B2587476D00722DDA /* Build configuration list for PBXNativeTarget "MachPortDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7180F10C2587476D00722DDA /* Debug */,
+				7180F10D2587476D00722DDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7180F15E258749C800722DDA /* Build configuration list for PBXNativeTarget "CoreMediaIOPluginDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7180F15F258749C800722DDA /* Debug */,
+				7180F160258749C800722DDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7180F0EF2587476B00722DDA /* Project object */;
+}

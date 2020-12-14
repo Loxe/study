@@ -6,10 +6,12 @@
 //
 
 #import "AppDelegate.h"
-#import "HZGlobalHeader.h"
+#import "HZIPCGlobalHeader.h"
+#import "HZIPCMachServer.h"
 
 @interface AppDelegate () <NSMachPortDelegate>
-
+@property (nonatomic, strong) HZIPCMachServer *machServer;
+@property (nonatomic, strong) id<NSObject> activity;
 @end
 
 @implementation AppDelegate
@@ -17,17 +19,31 @@
 - (void)applicationWillFinishLaunching:(NSNotification *)notification {
     //NSLog(@"%s", __func__);
     //[self XPCTest];
-    [self machBootstrapServerTest];
+    self.machServer = [[HZIPCMachServer alloc] init];
+    [self.machServer run];
     //[self nsConnectionTest];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    // Insert code here to initialize your application
+    // 注册这个活动, 要不, 切到其它App不到一分钟后, 此App代码里的计时器会不准, 大大减少执行次数
+    self.activity = [NSProcessInfo.processInfo beginActivityWithOptions:NSActivityUserInitiatedAllowingIdleSystemSleep reason:@"后台传数据"];
 }
-
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
     // Insert code here to tear down your application
+    [NSProcessInfo.processInfo endActivity:self.activity];
+}
+
+- (void)applicationWillHide:(NSNotification *)notification {
+    //NSLog(@"%s", __func__);
+}
+
+- (void)applicationWillResignActive:(NSNotification *)notification {
+    //NSLog(@"%s", __func__);
+}
+
+- (void)applicationDidChangeOcclusionState:(NSNotification *)notification {
+    //NSLog(@"%s %@", __func__, notification);
 }
 
 #pragma mark - XPC Test
@@ -48,27 +64,6 @@
     [self.remoteObjectProxy test:@"2222" reply:^(NSString *replyString) {
         NSLog(@"收到了回复: %@", replyString);
     }];
-}
-
-#pragma mark - NSMachBootstrapServer Test
-- (void)machBootstrapServerTest {
-    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(portDied:) name:NSPortDidBecomeInvalidNotification object:nil];
-    
-    self.port = (NSMachPort *)([[NSMachBootstrapServer sharedInstance] servicePortWithName:HZMachBootstrapPortName]);
-    NSLog(@"port1: %@", self.port);
-    if (self.port == nil) {
-        // This probably means another instance is running.∫
-        NSLog(@"Unable to open mach server port.");
-        return;
-    }
-    
-    self.port.delegate = self;
-    [[NSRunLoop mainRunLoop] addPort:self.port forMode:NSRunLoopCommonModes];
-}
-
-#pragma mark NSMachPortDelegate
-- (void)handlePortMessage:(NSPortMessage *)message {
-    NSLog(@"收到消息: %@", message);
 }
 
 #pragma mark - NSConnection Test

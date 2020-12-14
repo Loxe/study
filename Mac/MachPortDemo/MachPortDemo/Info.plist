@@ -26,29 +26,5 @@
 	<string>Main</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
-	<key>NSServices</key>
-	<array>
-		<dict>
-			<key>CFBundleIdentifier</key>
-			<string>com.hz.s</string>
-			<key>NSMenuItem</key>
-			<dict>
-				<key>default</key>
-				<string>1</string>
-			</dict>
-			<key>NSMessage</key>
-			<string>1</string>
-			<key>NSPortName</key>
-			<string>1</string>
-			<key>NSReturnTypes</key>
-			<array>
-				<string>1</string>
-			</array>
-			<key>NSSendFileTypes</key>
-			<array>
-				<string>1</string>
-			</array>
-		</dict>
-	</array>
 </dict>
 </plist>

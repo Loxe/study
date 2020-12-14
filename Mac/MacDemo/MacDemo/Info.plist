@@ -30,5 +30,9 @@
 	<array>
 		<string>com.hz</string>
 	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>external-accessory</string>
+	</array>
 </dict>
 </plist>

@@ -12,29 +12,13 @@
 		7122CC71257E30DF0098A0B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7122CC70257E30DF0098A0B3 /* Assets.xcassets */; };
 		7122CC74257E30DF0098A0B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7122CC72257E30DF0098A0B3 /* Main.storyboard */; };
 		7122CC77257E30DF0098A0B3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7122CC76257E30DF0098A0B3 /* main.m */; };
-		718599C62583614F0076726E /* HZXPCDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 71AE6484258213930053A132 /* HZXPCDelegate.m */; };
-		718599CB2583655C0076726E /* HZXPCDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 71AE6484258213930053A132 /* HZXPCDelegate.m */; };
-		719FC569257F878C0087EF51 /* HZPlugInMain.mm in Sources */ = {isa = PBXBuildFile; fileRef = 719FC568257F878C0087EF51 /* HZPlugInMain.mm */; };
-		719FC571257F88610087EF51 /* HZPlugInInterface.mm in Sources */ = {isa = PBXBuildFile; fileRef = 719FC570257F88610087EF51 /* HZPlugInInterface.mm */; };
-		719FC57C257F89300087EF51 /* HZObjectStore.mm in Sources */ = {isa = PBXBuildFile; fileRef = 719FC57B257F89300087EF51 /* HZObjectStore.mm */; };
-		719FC583257F89FC0087EF51 /* HZPlugIn.mm in Sources */ = {isa = PBXBuildFile; fileRef = 719FC582257F89FC0087EF51 /* HZPlugIn.mm */; };
-		719FC588257F8A2D0087EF51 /* HZDevice.mm in Sources */ = {isa = PBXBuildFile; fileRef = 719FC587257F8A2D0087EF51 /* HZDevice.mm */; };
-		719FC58F257F8A7A0087EF51 /* HZStream.mm in Sources */ = {isa = PBXBuildFile; fileRef = 719FC58E257F8A7A0087EF51 /* HZStream.mm */; };
-		719FC596257F8AEB0087EF51 /* CoreMediaIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 719FC595257F8AEB0087EF51 /* CoreMediaIO.framework */; };
-		719FC59A257F8B040087EF51 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 719FC599257F8B040087EF51 /* CoreGraphics.framework */; };
-		719FC59E257F8B100087EF51 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 719FC59D257F8B100087EF51 /* CoreMedia.framework */; };
-		719FC5A2257F8B180087EF51 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 719FC5A1257F8B180087EF51 /* CoreVideo.framework */; };
-		71A541DB25805A1D00BE0A2E /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71A541DA25805A1D00BE0A2E /* AppKit.framework */; };
+		7180F0C62586FC8B00722DDA /* HZIPCMachServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7180F0C52586FC8B00722DDA /* HZIPCMachServer.m */; };
+		7180F1D025874CFF00722DDA /* HZXPCDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7180F1CE25874CFF00722DDA /* HZXPCDelegate.m */; };
+		7180F1D325874D2400722DDA /* HZXPCDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7180F1CE25874CFF00722DDA /* HZXPCDelegate.m */; };
 		71AE640E2581C4910053A132 /* IOSurface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71AE640D2581C4910053A132 /* IOSurface.framework */; };
 		71AE64122581C49F0053A132 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71AE64112581C49F0053A132 /* Cocoa.framework */; };
 		71AE649B258225CF0053A132 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 71AE649A258225CF0053A132 /* main.m */; };
 		71AE649F258225CF0053A132 /* XPCService.xpc in Embed XPC Services */ = {isa = PBXBuildFile; fileRef = 71AE6494258225CF0053A132 /* XPCService.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		71AE64A7258225ED0053A132 /* HZXPCDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 71AE6484258213930053A132 /* HZXPCDelegate.m */; };
-		71AE64BF258244720053A132 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 71AE64BE258244720053A132 /* AppDelegate.m */; };
-		71AE64C2258244720053A132 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71AE64C1258244720053A132 /* ViewController.m */; };
-		71AE64C4258244740053A132 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71AE64C3258244740053A132 /* Assets.xcassets */; };
-		71AE64C7258244740053A132 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71AE64C5258244740053A132 /* Main.storyboard */; };
-		71AE64CA258244740053A132 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 71AE64C9258244740053A132 /* main.m */; };
 		71FD4CBA2580ED8C00D6D840 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71FD4CB92580ED8C00D6D840 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,21 +57,14 @@
 		7122CC75257E30DF0098A0B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7122CC76257E30DF0098A0B3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7122CC78257E30DF0098A0B3 /* MacDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacDemo.entitlements; sourceTree = "<group>"; };
-		718599D125837BC70076726E /* HZGLobalHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZGLobalHeader.h; sourceTree = "<group>"; };
-		719FC550257F869D0087EF51 /* CoreMediaIOPluginDemo.plugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreMediaIOPluginDemo.plugin; sourceTree = BUILT_PRODUCTS_DIR; };
-		719FC55D257F869D0087EF51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		719FC568257F878C0087EF51 /* HZPlugInMain.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HZPlugInMain.mm; sourceTree = "<group>"; };
-		719FC56E257F88210087EF51 /* HZLogging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZLogging.h; sourceTree = "<group>"; };
-		719FC56F257F88610087EF51 /* HZPlugInInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZPlugInInterface.h; sourceTree = "<group>"; };
-		719FC570257F88610087EF51 /* HZPlugInInterface.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HZPlugInInterface.mm; sourceTree = "<group>"; };
-		719FC57A257F89300087EF51 /* HZObjectStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZObjectStore.h; sourceTree = "<group>"; };
-		719FC57B257F89300087EF51 /* HZObjectStore.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HZObjectStore.mm; sourceTree = "<group>"; };
-		719FC581257F89FC0087EF51 /* HZPlugIn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZPlugIn.h; sourceTree = "<group>"; };
-		719FC582257F89FC0087EF51 /* HZPlugIn.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HZPlugIn.mm; sourceTree = "<group>"; };
-		719FC586257F8A2D0087EF51 /* HZDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZDevice.h; sourceTree = "<group>"; };
-		719FC587257F8A2D0087EF51 /* HZDevice.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HZDevice.mm; sourceTree = "<group>"; };
-		719FC58D257F8A7A0087EF51 /* HZStream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZStream.h; sourceTree = "<group>"; };
-		719FC58E257F8A7A0087EF51 /* HZStream.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HZStream.mm; sourceTree = "<group>"; };
+		7180F0C42586FC8B00722DDA /* HZIPCMachServer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZIPCMachServer.h; sourceTree = "<group>"; };
+		7180F0C52586FC8B00722DDA /* HZIPCMachServer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZIPCMachServer.m; sourceTree = "<group>"; };
+		7180F1C925874CFF00722DDA /* HZIPCMachClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZIPCMachClient.h; sourceTree = "<group>"; };
+		7180F1CA25874CFF00722DDA /* HZXPCProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZXPCProtocol.h; sourceTree = "<group>"; };
+		7180F1CB25874CFF00722DDA /* HZXPCDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZXPCDelegate.h; sourceTree = "<group>"; };
+		7180F1CC25874CFF00722DDA /* HZIPCMachClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZIPCMachClient.m; sourceTree = "<group>"; };
+		7180F1CD25874CFF00722DDA /* HZIPCGLobalHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZIPCGLobalHeader.h; sourceTree = "<group>"; };
+		7180F1CE25874CFF00722DDA /* HZXPCDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZXPCDelegate.m; sourceTree = "<group>"; };
 		719FC595257F8AEB0087EF51 /* CoreMediaIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMediaIO.framework; path = System/Library/Frameworks/CoreMediaIO.framework; sourceTree = SDKROOT; };
 		719FC599257F8B040087EF51 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		719FC59D257F8B100087EF51 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
@@ -97,22 +74,9 @@
 		71AE64112581C49F0053A132 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		71AE64152581C4AC0053A132 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		71AE64192581C4B70053A132 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
-		71AE6483258213930053A132 /* HZXPCDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZXPCDelegate.h; sourceTree = "<group>"; };
-		71AE6484258213930053A132 /* HZXPCDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZXPCDelegate.m; sourceTree = "<group>"; };
-		71AE6488258213AF0053A132 /* HZXPCProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZXPCProtocol.h; sourceTree = "<group>"; };
 		71AE6494258225CF0053A132 /* XPCService.xpc */ = {isa = PBXFileReference; explicitFileType = "wrapper.xpc-service"; includeInIndex = 0; path = XPCService.xpc; sourceTree = BUILT_PRODUCTS_DIR; };
 		71AE649A258225CF0053A132 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		71AE649C258225CF0053A132 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		71AE64BB258244720053A132 /* MachPortDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MachPortDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		71AE64BD258244720053A132 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		71AE64BE258244720053A132 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		71AE64C0258244720053A132 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		71AE64C1258244720053A132 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		71AE64C3258244740053A132 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		71AE64C6258244740053A132 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		71AE64C8258244740053A132 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		71AE64C9258244740053A132 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		71AE64CB258244740053A132 /* MachPortDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MachPortDemo.entitlements; sourceTree = "<group>"; };
 		71FD4C762580D26A00D6D840 /* MachServer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MachServer.h; sourceTree = "<group>"; };
 		71FD4C772580D26A00D6D840 /* CMakeLists.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
 		71FD4C782580D26A00D6D840 /* Defines.h.in */ = {isa = PBXFileReference; lastKnownFileType = text; path = Defines.h.in; sourceTree = "<group>"; };
@@ -155,26 +119,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		719FC54D257F869D0087EF51 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				719FC59E257F8B100087EF51 /* CoreMedia.framework in Frameworks */,
-				719FC59A257F8B040087EF51 /* CoreGraphics.framework in Frameworks */,
-				71A541DB25805A1D00BE0A2E /* AppKit.framework in Frameworks */,
-				719FC596257F8AEB0087EF51 /* CoreMediaIO.framework in Frameworks */,
-				719FC5A2257F8B180087EF51 /* CoreVideo.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		71AE6491258225CF0053A132 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		71AE64B8258244720053A132 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -187,11 +132,9 @@
 		7122CC5E257E30DC0098A0B3 = {
 			isa = PBXGroup;
 			children = (
-				718599D025837B630076726E /* GlobalFile */,
+				7180F1C825874CFF00722DDA /* GlobalFile */,
 				7122CC69257E30DC0098A0B3 /* MacDemo */,
-				719FC551257F869D0087EF51 /* CoreMediaIOPluginDemo */,
 				71AE6495258225CF0053A132 /* XPCService */,
-				71AE64BC258244720053A132 /* MachPortDemo */,
 				7122CC68257E30DC0098A0B3 /* Products */,
 				719FC594257F8AEB0087EF51 /* Frameworks */,
 			);
@@ -201,9 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				7122CC67257E30DC0098A0B3 /* MacDemo.app */,
-				719FC550257F869D0087EF51 /* CoreMediaIOPluginDemo.plugin */,
 				71AE6494258225CF0053A132 /* XPCService.xpc */,
-				71AE64BB258244720053A132 /* MachPortDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -216,6 +157,8 @@
 				7122CC6B257E30DC0098A0B3 /* AppDelegate.m */,
 				7122CC6D257E30DC0098A0B3 /* ViewController.h */,
 				7122CC6E257E30DC0098A0B3 /* ViewController.m */,
+				7180F0C42586FC8B00722DDA /* HZIPCMachServer.h */,
+				7180F0C52586FC8B00722DDA /* HZIPCMachServer.m */,
 				7122CC70257E30DF0098A0B3 /* Assets.xcassets */,
 				7122CC72257E30DF0098A0B3 /* Main.storyboard */,
 				7122CC75257E30DF0098A0B3 /* Info.plist */,
@@ -225,35 +168,18 @@
 			path = MacDemo;
 			sourceTree = "<group>";
 		};
-		718599D025837B630076726E /* GlobalFile */ = {
+		7180F1C825874CFF00722DDA /* GlobalFile */ = {
 			isa = PBXGroup;
 			children = (
-				71AE6488258213AF0053A132 /* HZXPCProtocol.h */,
-				71AE6483258213930053A132 /* HZXPCDelegate.h */,
-				71AE6484258213930053A132 /* HZXPCDelegate.m */,
-				718599D125837BC70076726E /* HZGLobalHeader.h */,
+				7180F1C925874CFF00722DDA /* HZIPCMachClient.h */,
+				7180F1CC25874CFF00722DDA /* HZIPCMachClient.m */,
+				7180F1CB25874CFF00722DDA /* HZXPCDelegate.h */,
+				7180F1CE25874CFF00722DDA /* HZXPCDelegate.m */,
+				7180F1CA25874CFF00722DDA /* HZXPCProtocol.h */,
+				7180F1CD25874CFF00722DDA /* HZIPCGLobalHeader.h */,
 			);
-			path = GlobalFile;
-			sourceTree = "<group>";
-		};
-		719FC551257F869D0087EF51 /* CoreMediaIOPluginDemo */ = {
-			isa = PBXGroup;
-			children = (
-				719FC55D257F869D0087EF51 /* Info.plist */,
-				719FC568257F878C0087EF51 /* HZPlugInMain.mm */,
-				719FC56E257F88210087EF51 /* HZLogging.h */,
-				719FC56F257F88610087EF51 /* HZPlugInInterface.h */,
-				719FC570257F88610087EF51 /* HZPlugInInterface.mm */,
-				719FC57A257F89300087EF51 /* HZObjectStore.h */,
-				719FC57B257F89300087EF51 /* HZObjectStore.mm */,
-				719FC581257F89FC0087EF51 /* HZPlugIn.h */,
-				719FC582257F89FC0087EF51 /* HZPlugIn.mm */,
-				719FC586257F8A2D0087EF51 /* HZDevice.h */,
-				719FC587257F8A2D0087EF51 /* HZDevice.mm */,
-				719FC58D257F8A7A0087EF51 /* HZStream.h */,
-				719FC58E257F8A7A0087EF51 /* HZStream.mm */,
-			);
-			path = CoreMediaIOPluginDemo;
+			name = GlobalFile;
+			path = ../GlobalFile;
 			sourceTree = "<group>";
 		};
 		719FC594257F8AEB0087EF51 /* Frameworks */ = {
@@ -282,22 +208,6 @@
 			path = XPCService;
 			sourceTree = "<group>";
 		};
-		71AE64BC258244720053A132 /* MachPortDemo */ = {
-			isa = PBXGroup;
-			children = (
-				71AE64BD258244720053A132 /* AppDelegate.h */,
-				71AE64BE258244720053A132 /* AppDelegate.m */,
-				71AE64C0258244720053A132 /* ViewController.h */,
-				71AE64C1258244720053A132 /* ViewController.m */,
-				71AE64C3258244740053A132 /* Assets.xcassets */,
-				71AE64C5258244740053A132 /* Main.storyboard */,
-				71AE64C8258244740053A132 /* Info.plist */,
-				71AE64C9258244740053A132 /* main.m */,
-				71AE64CB258244740053A132 /* MachPortDemo.entitlements */,
-			);
-			path = MachPortDemo;
-			sourceTree = "<group>";
-		};
 		71FD4C742580D26A00D6D840 /* src */ = {
 			isa = PBXGroup;
 			children = (
@@ -306,7 +216,7 @@
 				71FD4C802580D26A00D6D840 /* dal-plugin */,
 			);
 			name = src;
-			path = "../../../../../../Downloads/obs-mac-virtualcam-master/src";
+			path = ../src;
 			sourceTree = "<group>";
 		};
 		71FD4C752580D26A00D6D840 /* obs-plugin */ = {
@@ -396,23 +306,6 @@
 			productReference = 7122CC67257E30DC0098A0B3 /* MacDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		719FC54F257F869D0087EF51 /* CoreMediaIOPluginDemo */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 719FC563257F869D0087EF51 /* Build configuration list for PBXNativeTarget "CoreMediaIOPluginDemo" */;
-			buildPhases = (
-				719FC54C257F869D0087EF51 /* Sources */,
-				719FC54D257F869D0087EF51 /* Frameworks */,
-				719FC54E257F869D0087EF51 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = CoreMediaIOPluginDemo;
-			productName = CoreMediaIOPluginDemo;
-			productReference = 719FC550257F869D0087EF51 /* CoreMediaIOPluginDemo.plugin */;
-			productType = "com.apple.product-type.bundle";
-		};
 		71AE6493258225CF0053A132 /* XPCService */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 71AE64A0258225CF0053A132 /* Build configuration list for PBXNativeTarget "XPCService" */;
@@ -430,23 +323,6 @@
 			productReference = 71AE6494258225CF0053A132 /* XPCService.xpc */;
 			productType = "com.apple.product-type.xpc-service";
 		};
-		71AE64BA258244720053A132 /* MachPortDemo */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 71AE64CC258244740053A132 /* Build configuration list for PBXNativeTarget "MachPortDemo" */;
-			buildPhases = (
-				71AE64B7258244720053A132 /* Sources */,
-				71AE64B8258244720053A132 /* Frameworks */,
-				71AE64B9258244720053A132 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = MachPortDemo;
-			productName = MachPortDemo;
-			productReference = 71AE64BB258244720053A132 /* MachPortDemo.app */;
-			productType = "com.apple.product-type.application";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -458,13 +334,7 @@
 					7122CC66257E30DC0098A0B3 = {
 						CreatedOnToolsVersion = 12.2;
 					};
-					719FC54F257F869D0087EF51 = {
-						CreatedOnToolsVersion = 12.2;
-					};
 					71AE6493258225CF0053A132 = {
-						CreatedOnToolsVersion = 12.2;
-					};
-					71AE64BA258244720053A132 = {
 						CreatedOnToolsVersion = 12.2;
 					};
 				};
@@ -483,9 +353,7 @@
 			projectRoot = "";
 			targets = (
 				7122CC66257E30DC0098A0B3 /* MacDemo */,
-				719FC54F257F869D0087EF51 /* CoreMediaIOPluginDemo */,
 				71AE6493258225CF0053A132 /* XPCService */,
-				71AE64BA258244720053A132 /* MachPortDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -500,26 +368,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		719FC54E257F869D0087EF51 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		71AE6492258225CF0053A132 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		71AE64B9258244720053A132 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				71AE64C4258244740053A132 /* Assets.xcassets in Resources */,
-				71AE64C7258244740053A132 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,20 +385,8 @@
 				7122CC6F257E30DC0098A0B3 /* ViewController.m in Sources */,
 				7122CC77257E30DF0098A0B3 /* main.m in Sources */,
 				7122CC6C257E30DC0098A0B3 /* AppDelegate.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		719FC54C257F869D0087EF51 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				719FC571257F88610087EF51 /* HZPlugInInterface.mm in Sources */,
-				718599C62583614F0076726E /* HZXPCDelegate.m in Sources */,
-				719FC57C257F89300087EF51 /* HZObjectStore.mm in Sources */,
-				719FC583257F89FC0087EF51 /* HZPlugIn.mm in Sources */,
-				719FC588257F8A2D0087EF51 /* HZDevice.mm in Sources */,
-				719FC569257F878C0087EF51 /* HZPlugInMain.mm in Sources */,
-				719FC58F257F8A7A0087EF51 /* HZStream.mm in Sources */,
+				7180F0C62586FC8B00722DDA /* HZIPCMachServer.m in Sources */,
+				7180F1D025874CFF00722DDA /* HZXPCDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -554,19 +394,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7180F1D325874D2400722DDA /* HZXPCDelegate.m in Sources */,
 				71AE649B258225CF0053A132 /* main.m in Sources */,
-				71AE64A7258225ED0053A132 /* HZXPCDelegate.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		71AE64B7258244720053A132 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				71AE64C2258244720053A132 /* ViewController.m in Sources */,
-				71AE64CA258244740053A132 /* main.m in Sources */,
-				718599CB2583655C0076726E /* HZXPCDelegate.m in Sources */,
-				71AE64BF258244720053A132 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,14 +414,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				7122CC73257E30DF0098A0B3 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		71AE64C5258244740053A132 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				71AE64C6258244740053A132 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -774,34 +595,6 @@
 			};
 			name = Release;
 		};
-		719FC561257F869D0087EF51 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = FR47X7YWHJ;
-				INFOPLIST_FILE = CoreMediaIOPluginDemo/Info.plist;
-				INSTALL_PATH = "$(HOME)/Library/Bundles";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Anywii.CoreMediaIOPluginDemo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = plugin;
-			};
-			name = Debug;
-		};
-		719FC562257F869D0087EF51 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = FR47X7YWHJ;
-				INFOPLIST_FILE = CoreMediaIOPluginDemo/Info.plist;
-				INSTALL_PATH = "$(HOME)/Library/Bundles";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Anywii.CoreMediaIOPluginDemo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = plugin;
-			};
-			name = Release;
-		};
 		71AE64A1258225CF0053A132 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -830,48 +623,6 @@
 			};
 			name = Release;
 		};
-		71AE64CD258244740053A132 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = MachPortDemo/MachPortDemo.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = FR47X7YWHJ;
-				ENABLE_HARDENED_RUNTIME = NO;
-				INFOPLIST_FILE = MachPortDemo/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Anywii.MachPortDemo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		71AE64CE258244740053A132 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = MachPortDemo/MachPortDemo.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = FR47X7YWHJ;
-				ENABLE_HARDENED_RUNTIME = NO;
-				INFOPLIST_FILE = MachPortDemo/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Anywii.MachPortDemo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -893,29 +644,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		719FC563257F869D0087EF51 /* Build configuration list for PBXNativeTarget "CoreMediaIOPluginDemo" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				719FC561257F869D0087EF51 /* Debug */,
-				719FC562257F869D0087EF51 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		71AE64A0258225CF0053A132 /* Build configuration list for PBXNativeTarget "XPCService" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				71AE64A1258225CF0053A132 /* Debug */,
 				71AE64A2258225CF0053A132 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		71AE64CC258244740053A132 /* Build configuration list for PBXNativeTarget "MachPortDemo" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				71AE64CD258244740053A132 /* Debug */,
-				71AE64CE258244740053A132 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
