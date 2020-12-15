@@ -11,22 +11,19 @@
 #import <mach/mach_time.h>
 #include <CoreMediaIO/CMIOSampleBuffer.h>
 
-#import "HZLogging.h"
+#import "HZIPCGLobalHeader.h"
 
-@interface HZStream () {
-    CMSimpleQueueRef _queue;
-    CFTypeRef _clock;
-    NSImage *_testImage;
-    dispatch_source_t _frameDispatchSource;
-    uint64_t _firstFrameDeliveryTime;
-}
+@interface HZStream ()
 
-@property CMIODeviceStreamQueueAlteredProc alteredProc;
-@property void * alteredRefCon;
-@property (readonly) CMSimpleQueueRef queue;
-@property (readonly) CFTypeRef clock;
-@property UInt64 sequenceNumber;
-@property (readonly) NSImage *testImage;
+@property (nonatomic, strong) dispatch_source_t promptSource;
+@property (nonatomic, assign) CMIODeviceStreamQueueAlteredProc alteredProc;
+@property (nonatomic, assign) void * alteredRefCon;
+@property (nonatomic, assign) CMSimpleQueueRef queue;
+@property (nonatomic, assign) CFTypeRef clock;
+@property (nonatomic, assign) UInt64 sequenceNumber;
+
+@property (nonatomic, assign) CVPixelBufferRef promptPixelBuffer;
+@property (nonatomic, assign) int64_t waitPromptTime;
 
 @end
 
@@ -37,39 +34,31 @@
 - (instancetype _Nonnull)init {
     self = [super init];
     if (self) {
-        _firstFrameDeliveryTime = 0;
-        _frameDispatchSource = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0,
-                                                     dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0));
-
-        dispatch_time_t startTime = dispatch_time(DISPATCH_TIME_NOW, 0);
-        uint64_t intervalTime = (int64_t)(NSEC_PER_SEC / FPS);
-        dispatch_source_set_timer(_frameDispatchSource, startTime, intervalTime, 0);
-
+        self.waitPromptTime = 2;
+        
+        self.promptSource = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0));
+        dispatch_time_t startTime = dispatch_time(DISPATCH_TIME_NOW, self.waitPromptTime * NSEC_PER_SEC);
+        uint64_t intervalTime = (int64_t)(self.waitPromptTime * NSEC_PER_SEC);
+        dispatch_source_set_timer(self.promptSource, startTime, intervalTime, 0);
         __weak typeof(self) wself = self;
-        dispatch_source_set_event_handler(_frameDispatchSource, ^{
-            [wself fillFrame];
+        dispatch_source_set_event_handler(self.promptSource, ^{
+            [wself showPromptFrame];
         });
+        dispatch_resume(self.promptSource);
     }
     return self;
 }
 
 - (void)dealloc {
-    DLog(@"Stream Dealloc");
-    CMIOStreamClockInvalidate(_clock);
-    CFRelease(_clock);
-    _clock = NULL;
-    CFRelease(_queue);
-    _queue = NULL;
-    dispatch_suspend(_frameDispatchSource);
-}
-
-- (void)startServingFrames {
-    dispatch_resume(_frameDispatchSource);
-}
-
-- (void)stopServingFrames {
-    dispatch_suspend(_frameDispatchSource);
-    _firstFrameDeliveryTime = 0;
+    HZLog(@"Stream Dealloc");
+    CMIOStreamClockInvalidate(self.clock);
+    CFRelease(self.clock);
+    self.clock = NULL;
+    CFRelease(self.queue);
+    self.queue = NULL;
+    dispatch_suspend(self.promptSource);
+    CVPixelBufferRelease(self.promptPixelBuffer);
+    self.promptPixelBuffer = NULL;
 }
 
 - (CMSimpleQueueRef)queue {
@@ -77,7 +66,7 @@
         // Allocate a one-second long queue, which we can use our FPS constant for.
         OSStatus err = CMSimpleQueueCreate(kCFAllocatorDefault, FPS, &_queue);
         if (err != noErr) {
-            DLog(@"Err %d in CMSimpleQueueCreate", err);
+            HZLog(@"Err %d in CMSimpleQueueCreate", err);
         }
     }
     return _queue;
@@ -87,46 +76,26 @@
     if (_clock == NULL) {
         OSStatus err = CMIOStreamClockCreate(kCFAllocatorDefault, CFSTR("CMIOMinimalSample::Stream::clock"), (__bridge void *)self,  CMTimeMake(1, 10), 100, 10, &_clock);
         if (err != noErr) {
-            DLog(@"Error %d from CMIOStreamClockCreate", err);
+            HZLog(@"Error %d from CMIOStreamClockCreate", err);
         }
     }
     return _clock;
 }
 
-- (NSImage *)testImage {
-    if (_testImage == nil) {
-        NSBundle *bundle = [NSBundle bundleForClass:[self class]];
-        _testImage = [bundle imageForResource:@"hi"];
-    }
-    return _testImage;
-}
-
-- (CMSimpleQueueRef)copyBufferQueueWithAlteredProc:(CMIODeviceStreamQueueAlteredProc)alteredProc alteredRefCon:(void *)alteredRefCon {
-    self.alteredProc = alteredProc;
-    self.alteredRefCon = alteredRefCon;
-
-    // Retain this since it's a copy operation
-    CFRetain(self.queue);
-
-    return self.queue;
-}
-
-- (CVPixelBufferRef)createPixelBufferWithTestAnimation {
-    int width = 1280;
-    int height = 720;
-
+#pragma mark - PromptFrame
+- (CVPixelBufferRef)createPromptPixelBufferWithWidth:(size_t)width height:(size_t)height {
     NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:
                              [NSNumber numberWithBool:YES], kCVPixelBufferCGImageCompatibilityKey,
                              [NSNumber numberWithBool:YES], kCVPixelBufferCGBitmapContextCompatibilityKey, nil];
     CVPixelBufferRef pxbuffer = NULL;
-    CVReturn status = CVPixelBufferCreate(kCFAllocatorDefault, width, height, kCVPixelFormatType_32ARGB, (__bridge CFDictionaryRef) options, &pxbuffer);
-
+    CVReturn status = CVPixelBufferCreate(kCFAllocatorDefault, width, height, kCVPixelFormatType_32ARGB, (__bridge CFDictionaryRef)options, &pxbuffer);
+    
     NSParameterAssert(status == kCVReturnSuccess && pxbuffer != NULL);
-
+    
     CVPixelBufferLockBaseAddress(pxbuffer, 0);
     void *pxdata = CVPixelBufferGetBaseAddress(pxbuffer);
     NSParameterAssert(pxdata != NULL);
-
+    
     CGColorSpaceRef rgbColorSpace = CGColorSpaceCreateDeviceRGB();
     CGContextRef context = CGBitmapContextCreate(pxdata, width, height, 8, CVPixelBufferGetBytesPerRow(pxbuffer), rgbColorSpace, kCGImageAlphaPremultipliedFirst | kCGImageByteOrder32Big);
     NSParameterAssert(context);
@@ -144,7 +113,9 @@
     CFRelease(blackColor);
     
     // 文字
-    NSAttributedString *string = [[NSAttributedString alloc] initWithString:@"请插入UVC摄像头" attributes:@{
+    static int a = 0;
+    NSString *s  = [NSString stringWithFormat:@"请插入UVC摄像头 %d", a++];
+    NSAttributedString *string = [[NSAttributedString alloc] initWithString:s attributes:@{
         NSFontAttributeName : [NSFont systemFontOfSize:36.0f],
         NSForegroundColorAttributeName : [NSColor whiteColor],
     }];
@@ -160,76 +131,57 @@
     
     CGColorSpaceRelease(rgbColorSpace);
     CGContextRelease(context);
-
+    
     CVPixelBufferUnlockBaseAddress(pxbuffer, 0);
-
+    
     return pxbuffer;
 }
 
-- (void)fillFrame {
+- (void)showPromptFrame {
+#pragma todo 这里后面要改
+    //if (!self.promptPixelBuffer) {
+        self.promptPixelBuffer = [self createPromptPixelBufferWithWidth:1280 height:720];
+    //}
+    [self showPixelBuff:self.promptPixelBuffer];
+}
+
+- (void)showPixelBuff:(CVPixelBufferRef)pixelBuffer {
     if (CMSimpleQueueGetFullness(self.queue) >= 1.0) {
-        DLog(@"Queue is full, bailing out");
+        HZLog(@"Queue is full, bailing out");
         return;
     }
-
-    CVPixelBufferRef pixelBuffer = [self createPixelBufferWithTestAnimation];
-
-    // The timing here is quite important. For frames to be delivered correctly and successfully be recorded by apps
-    // like QuickTime Player, we need to be accurate in both our timestamps _and_ have a sensible scale. Using large
-    // scales like NSEC_PER_SEC combined with a mach_absolute_time() value will work for display, but will error out
-    // when trying to record.
-    //
-    // Instead, we start our presentation times from zero (using the sequence number as a base), and use a scale that's
-    // a multiple of our framerate. This has been observed in parts of AVFoundation and lets us be frame-accurate even
-    // on non-round framerates (i.e., we can use a scale of 2997 for 29,97 fps content if we want to).
-    //
-    // It's also been observed that we do seem to need a mach_absolute_time()-based value for presentation times in
-    // order to get reliable output and recording. Since we don't want to just call mach_absolute_time() on every
-    // frame (otherwise recorded output from this plugin will have frame timing based on the scheduling of our timer,
-    // which isn't guaranteed to be accurate), we record the system's absolute time on our first frame, then calculate
-    // a delta from these for subsequent frames. This keeps presentation times accurate even if our timer isn't.
-    if (_firstFrameDeliveryTime == 0) {
-        _firstFrameDeliveryTime = mach_absolute_time();
-    }
-
-    CMTimeScale scale = FPS * 100;
-    CMTime firstFrameTime = CMTimeMake((_firstFrameDeliveryTime / (CFTimeInterval)NSEC_PER_SEC) * scale, scale);
-    CMTime frameDuration = CMTimeMake(scale / FPS, scale);
-    CMTime framesSinceBeginning = CMTimeMake(frameDuration.value * self.sequenceNumber, scale);
-    CMTime presentationTime = CMTimeAdd(firstFrameTime, framesSinceBeginning);
-
+    CMTime time = CMTimeMake(mach_absolute_time(), 1);
     CMSampleTimingInfo timing;
-    timing.duration = frameDuration;
-    timing.presentationTimeStamp = presentationTime;
-    timing.decodeTimeStamp = presentationTime;
-    OSStatus err = CMIOStreamClockPostTimingEvent(presentationTime, mach_absolute_time(), true, self.clock);
+    timing.duration = CMTimeMake(1, 1);
+    timing.presentationTimeStamp = time;
+    timing.decodeTimeStamp = time;
+    OSStatus err = CMIOStreamClockPostTimingEvent(time, mach_absolute_time(), true, self.clock);
     if (err != noErr) {
-        DLog(@"CMIOStreamClockPostTimingEvent err %d", err);
+        HZLog(@"CMIOStreamClockPostTimingEvent err %d", err);
     }
-
+    
     CMFormatDescriptionRef format;
     CMVideoFormatDescriptionCreateForImageBuffer(kCFAllocatorDefault, pixelBuffer, &format);
-
+    
     self.sequenceNumber = CMIOGetNextSequenceNumber(self.sequenceNumber);
-
+    
     CMSampleBufferRef buffer;
     err = CMIOSampleBufferCreateForImageBuffer(
-        kCFAllocatorDefault,
-        pixelBuffer,
-        format,
-        &timing,
-        self.sequenceNumber,
-        kCMIOSampleBufferNoDiscontinuities,
-        &buffer
-    );
-    CFRelease(pixelBuffer);
+                                               kCFAllocatorDefault,
+                                               pixelBuffer,
+                                               format,
+                                               &timing,
+                                               self.sequenceNumber,
+                                               kCMIOSampleBufferNoDiscontinuities,
+                                               &buffer
+                                               );
     CFRelease(format);
     if (err != noErr) {
-        DLog(@"CMIOSampleBufferCreateForImageBuffer err %d", err);
+        HZLog(@"CMIOSampleBufferCreateForImageBuffer err %d", err);
     }
-
+    
     CMSimpleQueueEnqueue(self.queue, buffer);
-
+    
     // Inform the clients that the queue has been altered
     if (self.alteredProc != NULL) {
         (self.alteredProc)(self.objectId, buffer, self.alteredRefCon);
@@ -240,13 +192,47 @@
     CMVideoFormatDescriptionRef formatDescription;
     OSStatus err = CMVideoFormatDescriptionCreate(kCFAllocatorDefault, kCMVideoCodecType_422YpCbCr8, 1280, 720, NULL, &formatDescription);
     if (err != noErr) {
-        DLog(@"Error %d from CMVideoFormatDescriptionCreate", err);
+        HZLog(@"Error %d from CMVideoFormatDescriptionCreate", err);
     }
     return formatDescription;
 }
 
-#pragma mark - CMIOObject
+#pragma mark - External data
+- (void)showFrameData:(NSData *)frameData withWidth:(size_t)width height:(size_t)height bytesPerRow:(size_t)bytesPerRow {
+    void *baseAddress = malloc(frameData.length);
+    memcpy(baseAddress, frameData.bytes, frameData.length);
+    CVPixelBufferRef pixelBuffer = NULL;
+    CVReturn ret = CVPixelBufferCreateWithBytes(NULL, width, height, kCVPixelFormatType_32ARGB, baseAddress, bytesPerRow, NULL, NULL, NULL, &pixelBuffer);
+    if (ret == kCVReturnSuccess) {
+        NSLog(@"创建 CVPixelBufferRef 成功");
+    } else {
+        NSLog(@"创建 CVPixelBufferRef 失败: %d", ret);
+        free(baseAddress);
+        return;
+    }
+    
+    [self showPixelBuff:pixelBuffer];
+    
+    CVPixelBufferRelease(pixelBuffer);
+    free(baseAddress);
+    
+    dispatch_time_t startTime = dispatch_time(DISPATCH_TIME_NOW, self.waitPromptTime * NSEC_PER_SEC);
+    uint64_t intervalTime = (int64_t)(self.waitPromptTime * NSEC_PER_SEC);
+    dispatch_source_set_timer(self.promptSource, startTime, intervalTime, 0);
+}
 
+#pragma mark - BufferQueue
+- (CMSimpleQueueRef)copyBufferQueueWithAlteredProc:(CMIODeviceStreamQueueAlteredProc)alteredProc alteredRefCon:(void *)alteredRefCon {
+    self.alteredProc = alteredProc;
+    self.alteredRefCon = alteredRefCon;
+    
+    // Retain this since it's a copy operation
+    CFRetain(self.queue);
+    
+    return self.queue;
+}
+
+#pragma mark - CMIOObject
 - (UInt32)getPropertyDataSizeWithAddress:(CMIOObjectPropertyAddress)address qualifierDataSize:(UInt32)qualifierDataSize qualifierData:(nonnull const void *)qualifierData {
     switch (address.mSelector) {
         case kCMIOStreamPropertyInitialPresentationTimeStampForLinkedAndSyncedAudio:
@@ -285,7 +271,7 @@
         case kCMIOStreamPropertyClock:
             return sizeof(CFTypeRef);
         default:
-            DLog(@"Stream unhandled getPropertyDataSizeWithAddress for %@", [HZObjectStore StringFromPropertySelector:address.mSelector]);
+            HZLog(@"Stream unhandled getPropertyDataSizeWithAddress for %@", [HZObjectStore stringFromPropertySelector:address.mSelector]);
             return 0;
     };
 }
@@ -308,17 +294,19 @@
         case kCMIOStreamPropertyLatency:
         case kCMIOStreamPropertyInitialPresentationTimeStampForLinkedAndSyncedAudio:
         case kCMIOStreamPropertyOutputBuffersNeededForThrottledPlayback:
-            DLog(@"TODO: %@", [HZObjectStore StringFromPropertySelector:address.mSelector]);
+            HZLog(@"TODO: %@", [HZObjectStore stringFromPropertySelector:address.mSelector]);
             break;
         case kCMIOStreamPropertyDirection:
             *static_cast<UInt32*>(data) = 1;
             *dataUsed = sizeof(UInt32);
             break;
         case kCMIOStreamPropertyFormatDescriptions:
+            HZLog(@"kCMIOStreamPropertyFormatDescriptions");
             *static_cast<CFArrayRef*>(data) = (__bridge_retained CFArrayRef)[NSArray arrayWithObject:(__bridge_transfer NSObject *)[self getFormatDescription]];
             *dataUsed = sizeof(CFArrayRef);
             break;
         case kCMIOStreamPropertyFormatDescription:
+            HZLog(@"kCMIOStreamPropertyFormatDescription");
             *static_cast<CMVideoFormatDescriptionRef*>(data) = [self getFormatDescription];
             *dataUsed = sizeof(CMVideoFormatDescriptionRef);
             break;
@@ -349,7 +337,7 @@
             *dataUsed = sizeof(CFTypeRef);
             break;
         default:
-            DLog(@"Stream unhandled getPropertyDataWithAddress for %@", [HZObjectStore StringFromPropertySelector:address.mSelector]);
+            HZLog(@"Stream unhandled getPropertyDataWithAddress for %@", [HZObjectStore stringFromPropertySelector:address.mSelector]);
             *dataUsed = 0;
     };
 }
@@ -375,21 +363,21 @@
         case kCMIOStreamPropertyLatency:
         case kCMIOStreamPropertyInitialPresentationTimeStampForLinkedAndSyncedAudio:
         case kCMIOStreamPropertyOutputBuffersNeededForThrottledPlayback:
-            DLog(@"TODO: %@", [HZObjectStore StringFromPropertySelector:address.mSelector]);
+            HZLog(@"TODO: %@", [HZObjectStore stringFromPropertySelector:address.mSelector]);
             return false;
         default:
-            DLog(@"Stream unhandled hasPropertyWithAddress for %@", [HZObjectStore StringFromPropertySelector:address.mSelector]);
+            HZLog(@"Stream unhandled hasPropertyWithAddress for %@", [HZObjectStore stringFromPropertySelector:address.mSelector]);
             return false;
     };
 }
 
 - (BOOL)isPropertySettableWithAddress:(CMIOObjectPropertyAddress)address {
-    DLog(@"Stream unhandled isPropertySettableWithAddress for %@", [HZObjectStore StringFromPropertySelector:address.mSelector]);
+    HZLog(@"Stream unhandled isPropertySettableWithAddress for %@", [HZObjectStore stringFromPropertySelector:address.mSelector]);
     return false;
 }
 
 - (void)setPropertyDataWithAddress:(CMIOObjectPropertyAddress)address qualifierDataSize:(UInt32)qualifierDataSize qualifierData:(nonnull const void *)qualifierData dataSize:(UInt32)dataSize data:(nonnull const void *)data {
-    DLog(@"Stream unhandled setPropertyDataWithAddress for %@", [HZObjectStore StringFromPropertySelector:address.mSelector]);
+    HZLog(@"Stream unhandled setPropertyDataWithAddress for %@", [HZObjectStore stringFromPropertySelector:address.mSelector]);
 }
 
 @end

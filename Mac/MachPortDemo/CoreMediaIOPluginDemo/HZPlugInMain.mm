@@ -8,7 +8,7 @@
 #import <CoreMediaIO/CMIOHardwarePlugIn.h>
 
 #import "HZPlugInInterface.h"
-#import "HZLogging.h"
+#import "HZIPCGLobalHeader.h"
 
 #import "HZXPCDelegate.h"
 
@@ -24,7 +24,7 @@
 //! PlugInMain is the entrypoint for the plugin
 extern "C" {
     void* HZPlugInMain(CFAllocatorRef allocator, CFUUIDRef requestedTypeUUID) {
-        DLogFunc(@"");
+        HZLog(@"");
         if (!CFEqual(requestedTypeUUID, kCMIOHardwarePlugInTypeID)) {
             return 0;
         }

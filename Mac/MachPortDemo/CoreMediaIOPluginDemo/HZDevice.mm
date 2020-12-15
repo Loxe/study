@@ -11,7 +11,7 @@
 #include <IOKit/audio/IOAudioTypes.h>
 
 #import "HZPlugIn.h"
-#import "HZLogging.h"
+#import "HZIPCGLobalHeader.h"
 
 @interface HZDevice ()
 @property BOOL excludeNonDALAccess;
@@ -72,7 +72,7 @@
         case kCMIODevicePropertyDeviceMaster:
             return sizeof(pid_t);
         default:
-            DLog(@"Device unhandled getPropertyDataSizeWithAddress for %@", [HZObjectStore StringFromPropertySelector:address.mSelector]);
+            HZLog(@"Device unhandled getPropertyDataSizeWithAddress for %@", [HZObjectStore stringFromPropertySelector:address.mSelector]);
     };
 
     return 0;
@@ -147,7 +147,7 @@
             *dataUsed = sizeof(CMIOObjectID);
             break;
         case kCMIODevicePropertyStreamConfiguration:
-            DLog(@"TODO kCMIODevicePropertyStreamConfiguration");
+            HZLog(@"TODO kCMIODevicePropertyStreamConfiguration");
             break;
         case kCMIODevicePropertyExcludeNonDALAccess:
             *static_cast<UInt32*>(data) = self.excludeNonDALAccess ? 1 : 0;
@@ -166,7 +166,7 @@
             *dataUsed = sizeof(pid_t);
             break;
         default:
-            DLog(@"Device unhandled getPropertyDataWithAddress for %@", [HZObjectStore StringFromPropertySelector:address.mSelector]);
+            HZLog(@"Device unhandled getPropertyDataWithAddress for %@", [HZObjectStore stringFromPropertySelector:address.mSelector]);
             *dataUsed = 0;
             break;
     };
@@ -199,7 +199,7 @@
         case kCMIODevicePropertyLinkedCoreAudioDeviceUID:
             return false;
         default:
-            DLog(@"Device unhandled hasPropertyWithAddress for %@", [HZObjectStore StringFromPropertySelector:address.mSelector]);
+            HZLog(@"Device unhandled hasPropertyWithAddress for %@", [HZObjectStore stringFromPropertySelector:address.mSelector]);
             return false;
     };
 }
@@ -231,7 +231,7 @@
         case kCMIODevicePropertyDeviceMaster:
             return true;
         default:
-            DLog(@"Device unhandled isPropertySettableWithAddress for %@", [HZObjectStore StringFromPropertySelector:address.mSelector]);
+            HZLog(@"Device unhandled isPropertySettableWithAddress for %@", [HZObjectStore stringFromPropertySelector:address.mSelector]);
             return false;
     };
 }
@@ -246,7 +246,7 @@
             self.masterPid = *static_cast<const pid_t*>(data);
             break;
         default:
-            DLog(@"Device unhandled setPropertyDataWithAddress for %@", [HZObjectStore StringFromPropertySelector:address.mSelector]);
+            HZLog(@"Device unhandled setPropertyDataWithAddress for %@", [HZObjectStore stringFromPropertySelector:address.mSelector]);
             break;
     };
 }

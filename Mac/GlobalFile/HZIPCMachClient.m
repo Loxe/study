@@ -15,7 +15,7 @@
 @implementation HZIPCMachClient
 
 - (void)dealloc {
-    NSLog(@"%s", __func__);
+    HZLog(@"%s", __func__);
     self.receivePort.delegate = nil;
 }
 
@@ -44,19 +44,19 @@
             while(weakSelf) {
                 [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.1]];
             }
-            NSLog(@"Shutting down receive run loop");
+            HZLog(@"Shutting down receive run loop");
         });
-        NSLog(@"Initialized mach port %d for receiving", ((NSMachPort *)_receivePort).machPort);
+        HZLog(@"Initialized mach port %d for receiving", ((NSMachPort *)_receivePort).machPort);
     }
     return _receivePort;
 }
 
 - (BOOL)connectToServer {
-    NSLog(@"%s", __func__);
+    HZLog(@"%s", __func__);
 
     NSPort *sendPort = [self serverPort];
     if (sendPort == nil) {
-        NSLog(@"Unable to connect to server port");
+        HZLog(@"Unable to connect to server port");
         return NO;
     }
 
@@ -65,7 +65,28 @@
 
     NSDate *timeout = [NSDate dateWithTimeIntervalSinceNow:5.0];
     if (![message sendBeforeDate:timeout]) {
-        NSLog(@"sendBeforeDate failed");
+        HZLog(@"sendBeforeDate failed");
+        return NO;
+    }
+
+    return YES;
+}
+
+- (BOOL)disconnectToServer {
+    HZLog(@"%s", __func__);
+
+    NSPort *sendPort = [self serverPort];
+    if (sendPort == nil) {
+        HZLog(@"Unable to connect to server port");
+        return NO;
+    }
+
+    NSPortMessage *message = [[NSPortMessage alloc] initWithSendPort:sendPort receivePort:self.receivePort components:nil];
+    message.msgid = HZIPCMachMessageIDStop;
+
+    NSDate *timeout = [NSDate dateWithTimeIntervalSinceNow:5.0];
+    if (![message sendBeforeDate:timeout]) {
+        HZLog(@"sendBeforeDate failed");
         return NO;
     }
 
@@ -73,34 +94,36 @@
 }
 
 - (void)handlePortMessage:(NSPortMessage *)message {
-    NSLog(@"%s", __func__);
+    //HZLog(@"%s", __func__);
     NSArray *components = message.components;
     switch (message.msgid) {
         case HZIPCMachMessageIDConnect:
-            NSLog(@"Received connect response");
+            HZLog(@"Received connect response");
             break;
             
         case HZIPCMachMessageIDFrame:
-            //NSLog(@"Received frame message");
-            if (components.count >= 3) {
+            HZLog(@"Received frame message");
+            if (components.count >= 4) {
                 size_t width;
                 [components[0] getBytes:&width length:sizeof(width)];
                 size_t height;
                 [components[1] getBytes:&height length:sizeof(height)];
-                NSData *data = components[2];
-                if (self.delegate && [self.delegate respondsToSelector:@selector(receivedFrameData:withWidth:height:)]) {
-                    [self.delegate receivedFrameData:data withWidth:width height:height];
+                size_t bytesPerRow;
+                [components[2] getBytes:&bytesPerRow length:sizeof(bytesPerRow)];
+                NSData *data = components[3];
+                if (self.delegate && [self.delegate respondsToSelector:@selector(receivedFrameData:withWidth:height:bytesPerRow:)]) {
+                    [self.delegate receivedFrameData:data withWidth:width height:height bytesPerRow:bytesPerRow];
                 }
             }
             break;
             
         case HZIPCMachMessageIDStop:
-            NSLog(@"Received stop message");
+            HZLog(@"Received stop message");
             [self.delegate receivedStop];
             break;
             
         default:
-            NSLog(@"Received unexpected response msgid %u", (unsigned)message.msgid);
+            HZLog(@"Received unexpected response msgid %u", (unsigned)message.msgid);
             break;
     }
 }

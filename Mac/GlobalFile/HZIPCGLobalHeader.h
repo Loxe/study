@@ -8,6 +8,8 @@
 #ifndef HZIPCGLobalHeader_h
 #define HZIPCGLobalHeader_h
 
+#define HZLog(fmt, ...) NSLog((@"CMIOMS: %s line:%d 打印内容:" fmt), __func__, __LINE__, ##__VA_ARGS__)
+
 #define HZMachBootstrapPortName @"com.Anywii.MacDemo"
 
 typedef NS_ENUM(NSUInteger, HZIPCMachMessageID) {

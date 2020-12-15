@@ -17,6 +17,10 @@
 
 @implementation ViewController
 
+- (void)dealloc {
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -26,6 +30,10 @@
     self.machClient = [[HZIPCMachClient alloc] init];
     self.machClient.delegate = self;
     [self.machClient connectToServer];
+    
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 5 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+//        [self.machClient disconnectToServer];
+//    });
 }
 
 - (void)viewDidLayout {
@@ -41,9 +49,9 @@
 }
 
 #pragma mark - HZIPCMachClientDelegate
-- (void)receivedFrameData:(NSData *)frameData withWidth:(size_t)width height:(size_t)height {
+- (void)receivedFrameData:(NSData *)frameData withWidth:(size_t)width height:(size_t)height bytesPerRow:(size_t)bytesPerRow {
     CGColorSpaceRef rgbColorSpace = CGColorSpaceCreateDeviceRGB();
-    CGContextRef context = CGBitmapContextCreate((void *)(frameData.bytes), width, height, 8, width * 4, rgbColorSpace, kCGImageAlphaPremultipliedFirst | kCGImageByteOrder32Big);
+    CGContextRef context = CGBitmapContextCreate((void *)(frameData.bytes), width, height, 8, bytesPerRow, rgbColorSpace, kCGImageAlphaPremultipliedFirst | kCGImageByteOrder32Big);
     CGImageRef cgImage = CGBitmapContextCreateImage(context);
     CGContextRelease(context);
     CGColorSpaceRelease(rgbColorSpace);

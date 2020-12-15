@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @optional
 - (void)receivedFrameWithSize:(NSSize)size timestamp:(uint64_t)timestamp fpsNumerator:(uint32_t)fpsNumerator fpsDenominator:(uint32_t)fpsDenominator frameData:(NSData *)frameData;
-- (void)receivedFrameData:(NSData *)frameData withWidth:(size_t)width height:(size_t)height;
+- (void)receivedFrameData:(NSData *)frameData withWidth:(size_t)width height:(size_t)height bytesPerRow:(size_t)bytesPerRow;
 - (void)receivedStop;
 
 @end
@@ -26,6 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)isServerAvailable;
 
 - (BOOL)connectToServer;
+- (BOOL)disconnectToServer;
 
 @end
 

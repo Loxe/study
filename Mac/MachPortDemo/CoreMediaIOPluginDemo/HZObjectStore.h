@@ -22,13 +22,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface HZObjectStore : NSObject
 
-+ (HZObjectStore *)SharedObjectStore;
++ (HZObjectStore *)sharedObjectStore;
 
-+ (NSObject<HZCMIOObject> *)GetObjectWithId:(CMIOObjectID)objectId;
++ (NSObject<HZCMIOObject> *)getObjectWithId:(CMIOObjectID)objectId;
 
-+ (NSString *)StringFromPropertySelector:(CMIOObjectPropertySelector)selector;
++ (NSString *)stringFromPropertySelector:(CMIOObjectPropertySelector)selector;
 
-+ (BOOL)IsBridgedTypeForSelector:(CMIOObjectPropertySelector)selector;
++ (BOOL)isBridgedTypeForSelector:(CMIOObjectPropertySelector)selector;
 
 - (NSObject<HZCMIOObject> *)getObject:(CMIOObjectID)objectID;
 

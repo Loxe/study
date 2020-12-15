@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7177210C25884B38000022E0 /* HZIPCMachClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 7180F1DA25874D4400722DDA /* HZIPCMachClient.m */; };
 		7180F0FC2587476B00722DDA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7180F0FB2587476B00722DDA /* AppDelegate.m */; };
 		7180F0FF2587476B00722DDA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7180F0FE2587476B00722DDA /* ViewController.m */; };
 		7180F1012587476D00722DDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7180F1002587476D00722DDA /* Assets.xcassets */; };
@@ -43,7 +44,6 @@
 		7180F15A258749C800722DDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7180F17D25874AED00722DDA /* HZDevice.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = HZDevice.mm; sourceTree = "<group>"; };
 		7180F17E25874AED00722DDA /* HZObjectStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZObjectStore.h; sourceTree = "<group>"; };
-		7180F17F25874AED00722DDA /* HZLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZLogging.h; sourceTree = "<group>"; };
 		7180F18025874AEE00722DDA /* HZObjectStore.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = HZObjectStore.mm; sourceTree = "<group>"; };
 		7180F18125874AEE00722DDA /* HZStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZStream.h; sourceTree = "<group>"; };
 		7180F18225874AEE00722DDA /* HZPlugInInterface.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = HZPlugInInterface.mm; sourceTree = "<group>"; };
@@ -131,7 +131,6 @@
 				7180F15A258749C800722DDA /* Info.plist */,
 				7180F18425874AEE00722DDA /* HZDevice.h */,
 				7180F17D25874AED00722DDA /* HZDevice.mm */,
-				7180F17F25874AED00722DDA /* HZLogging.h */,
 				7180F17E25874AED00722DDA /* HZObjectStore.h */,
 				7180F18025874AEE00722DDA /* HZObjectStore.mm */,
 				7180F18325874AEE00722DDA /* HZPlugIn.h */,
@@ -281,6 +280,7 @@
 			files = (
 				7180F18A25874AEE00722DDA /* HZObjectStore.mm in Sources */,
 				7180F1E325874D8300722DDA /* HZXPCDelegate.m in Sources */,
+				7177210C25884B38000022E0 /* HZIPCMachClient.m in Sources */,
 				7180F18C25874AEE00722DDA /* HZStream.mm in Sources */,
 				7180F18925874AEE00722DDA /* HZDevice.mm in Sources */,
 				7180F18B25874AEE00722DDA /* HZPlugInInterface.mm in Sources */,

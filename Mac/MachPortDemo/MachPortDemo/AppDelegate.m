@@ -9,6 +9,7 @@
 #import "HZXPCDelegate.h"
 #import "HZIPCGLobalHeader.h"
 #import "HZIPCMachClient.h"
+#import "HZIPCGlobalHeader.h"
 
 @interface AppDelegate ()
 
@@ -18,6 +19,7 @@
 - (void)applicationWillFinishLaunching:(NSNotification *)notification {
     //[self nsConnectionTest];
     //[self XPCTest];
+    [self mach_absolute_time];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
@@ -49,6 +51,11 @@
     //调用代理对象中的方法，就跟普通对象一样，当然如果为了让代理对象的方法可见，可以定义公共的协议protocol
     [distantObject performSelector:@selector(connectionTest)];
 #pragma clang diagnostic pop
+}
+
+#pragma mark - Other
+- (void)mach_absolute_time {
+    HZLog(@"%llu", mach_absolute_time());
 }
 
 @end

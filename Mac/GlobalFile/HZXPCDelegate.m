@@ -6,12 +6,13 @@
 //
 
 #import "HZXPCDelegate.h"
+#import "HZIPCGLobalHeader.h"
 
 
 @implementation HZXPCService
 
 - (void)test:(NSString *)string reply:(void (^)(NSString *))reply {
-    NSLog(@"插件内部收到: %@", string);
+    HZLog(@"插件内部收到: %@", string);
     if (reply) {
         reply(@"回复进程通信");
     }
@@ -33,7 +34,7 @@
 
 #pragma mark - NSXPCListenerDelegate
 - (BOOL)listener:(NSXPCListener *)listener shouldAcceptNewConnection:(NSXPCConnection *)newConnection {
-    NSLog(@"NSXPCListener 代理方法");
+    HZLog(@"NSXPCListener 代理方法");
     //设置service端接收消息的配置
     // 每次创建一个新的 NSXPCConnection, 都会调到这里来
     newConnection.exportedInterface = [NSXPCInterface interfaceWithProtocol:@protocol(HZXPCProtocol)];

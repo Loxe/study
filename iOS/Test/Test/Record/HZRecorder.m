@@ -19,8 +19,8 @@
                               (NSString*)kCVPixelBufferIOSurfacePropertiesKey: [NSDictionary dictionary]};
     CVPixelBufferRef pxbuffer = NULL;
      
-    CGFloat frameWidth = size.width;
-    CGFloat frameHeight = size.height;
+    CGFloat frameWidth = size.width * self.contentScaleFactor;
+    CGFloat frameHeight = size.height * self.contentScaleFactor;
      
     CVReturn status = CVPixelBufferCreate(kCFAllocatorDefault,
                                           frameWidth,
@@ -36,22 +36,16 @@
     NSParameterAssert(pxdata != NULL);
      
     CGColorSpaceRef rgbColorSpace = CGColorSpaceCreateDeviceRGB();
-     
-    CGContextRef context = CGBitmapContextCreate(pxdata, size.width, size.height, 8, CVPixelBufferGetBytesPerRow(pxbuffer), rgbColorSpace, kCGImageAlphaPremultipliedFirst);
-     
+    CGContextRef context = CGBitmapContextCreate(pxdata, frameWidth, frameHeight, 8, CVPixelBufferGetBytesPerRow(pxbuffer), rgbColorSpace, kCGImageAlphaPremultipliedFirst);
     NSParameterAssert(context);
      
     CGContextConcatCTM(context, CGAffineTransformMakeRotation(0));
-    CGAffineTransform flipVertical = CGAffineTransformMake( 1, 0, 0, -1, 0, frameHeight);
+    CGAffineTransform flipVertical = CGAffineTransformMake(-1, 0, 0, -1, frameWidth, frameHeight);
     CGContextConcatCTM(context, flipVertical);
     
-    //CGAffineTransform flipHorizontal = CGAffineTransformMake( -1.0, 0.0, 0.0, 1.0, frameWidth, 0.0 );
-    //CGContextConcatCTM(context, flipHorizontal);
-    
-    [self.layer renderInContext:context];
-//    UIGraphicsPushContext(context);
-//    [self drawViewHierarchyInRect:self.bounds afterScreenUpdates:NO];
-//    UIGraphicsPopContext();
+    UIGraphicsPushContext(context);
+    [self drawViewHierarchyInRect:self.bounds afterScreenUpdates:NO];
+    UIGraphicsPopContext();
      
     CGColorSpaceRelease(rgbColorSpace);
     CGContextRelease(context);
@@ -75,6 +69,7 @@
 @property (strong, nonatomic) AVAssetWriterInputPixelBufferAdaptor  *adapter;
 
 @property (strong, nonatomic) CADisplayLink *displayLink;
+@property (strong, nonatomic) dispatch_queue_global_t queue;
 
 @end
 
@@ -90,54 +85,73 @@
 }
 
 - (void)startRecordingView:(UIView *)view outputURL:(NSURL *)outputURL {
-    self.sourceView = view;
-    CGSize size = view.bounds.size;
-    self.framesPerSecond = 30.0;
+    if (!view || !outputURL) {
+        NSLog(@"view or outputURL is nil");
+        return;
+    }
     
-    NSError *error = nil;
-    self.writer = [[AVAssetWriter alloc] initWithURL:outputURL fileType:AVFileTypeMPEG4 error:&error];
-    NSAssert(error == nil, error.debugDescription);
-    
+    CGSize size = CGSizeMake(view.bounds.size.width * view.contentScaleFactor,
+                             view.bounds.size.height * view.contentScaleFactor);
+    self.queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_async(self.queue, ^{
+        NSString *path = [outputURL path];
+        if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
+            [[NSFileManager defaultManager] removeItemAtPath:path error:nil];
+        }
+        
+        self.sourceView = view;
+        self.framesPerSecond = 10.0;
+        
+        NSError *error = nil;
+        self.writer = [[AVAssetWriter alloc] initWithURL:outputURL fileType:AVFileTypeMPEG4 error:&error];
+        NSAssert(error == nil, error.debugDescription);
+        
+        int alignUnit = 16;
+        int w = size.width;
+        int alignedWidth = (w + (alignUnit - 1)) & ~(alignUnit - 1);
+        int h = size.height;
+        int alignedHeight = (h + (alignUnit - 1)) & ~(alignUnit - 1);
 #if TARGET_OS_MACCATALYST
     AVVideoCodecType type = AVVideoCodecTypeH264;
 #else
     AVVideoCodecType type = AVVideoCodecH264;
 #endif
-    NSDictionary *settings = @{
-        AVVideoCodecKey: type,
-        AVVideoWidthKey: @(size.width),
-        AVVideoHeightKey: @(size.height)
-    };
-    
-    self.input = [AVAssetWriterInput assetWriterInputWithMediaType:AVMediaTypeVideo outputSettings:settings];
-    self.input.expectsMediaDataInRealTime = YES;
-    
-    NSDictionary *attributes = @{
-                                 (NSString *)kCVPixelBufferPixelFormatTypeKey: @(kCVPixelFormatType_32ARGB),
-                                 (NSString *)kCVPixelBufferWidthKey: @(size.width),
-                                 (NSString *)kCVPixelBufferHeightKey: @(size.height)
-                                 };
-    self.adapter = [AVAssetWriterInputPixelBufferAdaptor assetWriterInputPixelBufferAdaptorWithAssetWriterInput:self.input sourcePixelBufferAttributes:attributes];
-    
-    [self.writer addInput:self.input];
-    [self.writer startWriting];
-    [self.writer startSessionAtSourceTime:kCMTimeZero];
-    
-    self.timeCount = 0;
-    
-    self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(recordAction)];
-    self.displayLink.preferredFramesPerSecond = self.framesPerSecond;
-    [self.displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
+
+        NSDictionary *settings = @{
+            AVVideoCodecKey: type,
+            AVVideoWidthKey: @(alignedWidth),
+            AVVideoHeightKey: @(alignedHeight)
+        };
+        
+        self.input = [AVAssetWriterInput assetWriterInputWithMediaType:AVMediaTypeVideo outputSettings:settings];
+        self.input.expectsMediaDataInRealTime = YES;
+        
+        NSDictionary *attributes = @{
+            (NSString *)kCVPixelBufferPixelFormatTypeKey: @(kCVPixelFormatType_32ARGB),
+            (NSString *)kCVPixelBufferWidthKey: @(size.width),
+            (NSString *)kCVPixelBufferHeightKey: @(size.height)
+        };
+        self.adapter = [AVAssetWriterInputPixelBufferAdaptor assetWriterInputPixelBufferAdaptorWithAssetWriterInput:self.input sourcePixelBufferAttributes:attributes];
+        
+        [self.writer addInput:self.input];
+        [self.writer startWriting];
+        [self.writer startSessionAtSourceTime:kCMTimeZero];
+        
+        self.timeCount = 0;
+        
+        self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(recordAction)];
+        self.displayLink.preferredFramesPerSecond = self.framesPerSecond;
+        [self.displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
+    });
 }
 
 - (void)recordAction {
-    //获取像素数据
+    //get pixel
     CVPixelBufferRef buffer = [self.sourceView CVPixelBufferRef];
-    //写入像素数据
-    dispatch_queue_global_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    dispatch_async(queue, ^{
+    //write pixel
+    dispatch_async(self.queue, ^{
         if (!self.input.readyForMoreMediaData) {
-            NSLog(@"readyForMoreMediaData 未准备");
+            NSLog(@"readyForMoreMediaData unready");
             return;
         }
         
@@ -146,7 +160,7 @@
         if(!success) {
             NSLog(@"Failed to write image: %@", [self.writer error].userInfo);
         } else {
-            NSLog(@"write image %lu", (unsigned long)self.timeCount);
+            //NSLog(@"write image %lu", (unsigned long)self.timeCount);
         }
         
         if(buffer) {
@@ -160,10 +174,12 @@
     [self.displayLink invalidate];
     self.displayLink = nil;
     
-    [self.input markAsFinished];
-    [self.writer finishWritingWithCompletionHandler:^{
-        NSLog(@"录完了");
-    }];
+    dispatch_async(self.queue, ^{
+        [self.input markAsFinished];
+        [self.writer finishWritingWithCompletionHandler:^{
+            NSLog(@"finish");
+        }];
+    });
 }
 
 @end

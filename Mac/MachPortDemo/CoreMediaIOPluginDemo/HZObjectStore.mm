@@ -14,7 +14,7 @@
 @implementation HZObjectStore
 
 // 4-byte selectors to string for easy debugging
-+ (NSString *)StringFromPropertySelector:(CMIOObjectPropertySelector)selector {
++ (NSString *)stringFromPropertySelector:(CMIOObjectPropertySelector)selector {
     switch (selector) {
         case kCMIODevicePropertyPlugIn:
             return @"kCMIODevicePropertyPlugIn";
@@ -211,7 +211,7 @@
         }
 }
 
-+ (BOOL)IsBridgedTypeForSelector:(CMIOObjectPropertySelector)selector {
++ (BOOL)isBridgedTypeForSelector:(CMIOObjectPropertySelector)selector {
     switch (selector) {
         case kCMIOObjectPropertyName:
         case kCMIOObjectPropertyManufacturer:
@@ -229,7 +229,7 @@
         }
 }
 
-+ (HZObjectStore *)SharedObjectStore {
++ (HZObjectStore *)sharedObjectStore {
     static HZObjectStore *sObjectStore = nil;
     static dispatch_once_t sOnceToken;
     dispatch_once(&sOnceToken, ^{
@@ -238,8 +238,8 @@
     return sObjectStore;
 }
 
-+ (NSObject<HZCMIOObject> *)GetObjectWithId:(CMIOObjectID)objectId {
-    return [[HZObjectStore SharedObjectStore] getObject:objectId];
++ (NSObject<HZCMIOObject> *)getObjectWithId:(CMIOObjectID)objectId {
+    return [[HZObjectStore sharedObjectStore] getObject:objectId];
 }
 
 - (id)init {

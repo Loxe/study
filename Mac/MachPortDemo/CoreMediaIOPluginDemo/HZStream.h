@@ -15,13 +15,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property CMIOStreamID objectId;
 
-- (instancetype _Nonnull)init;
-
 - (CMSimpleQueueRef)copyBufferQueueWithAlteredProc:(CMIODeviceStreamQueueAlteredProc)alteredProc alteredRefCon:(void *)alteredRefCon;
 
-- (void)startServingFrames;
-
-- (void)stopServingFrames;
+- (void)showPromptFrame;
+- (void)showFrameData:(NSData *)frameData withWidth:(size_t)width height:(size_t)height bytesPerRow:(size_t)bytesPerRow;
 
 @end
 

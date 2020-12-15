@@ -14,7 +14,7 @@
 
 @interface HZIPCMachServer () <NSPortDelegate>
 @property (nonatomic, strong) NSPort *port;
-@property (nonatomic, strong) NSMutableSet *clientPorts;
+@property (nonatomic, strong) NSMutableSet<NSPort *> *clientPorts;
 @property (nonatomic, strong) NSRunLoop *runLoop;
 @property (nonatomic, strong) NSTimer *dataTimer;
 @end
@@ -69,7 +69,7 @@
     self.runLoop = [NSRunLoop mainRunLoop];
     [self.runLoop addPort:self.port forMode:NSRunLoopCommonModes];
     
-    NSLog(@"mach server start run!");
+    NSLog(@"Mach server port start run!");
 }
 
 #pragma mark - NSPortDelegate
@@ -77,8 +77,17 @@
     switch (message.msgid) {
         case HZIPCMachMessageIDConnect:
             if (message.sendPort != nil) {
-                NSLog(@"mach server received connect message from port %d!", ((NSMachPort *)message.sendPort).machPort);
+                NSLog(@"Mach server received connect message from port %d!", ((NSMachPort *)message.sendPort).machPort);
                 [self.clientPorts addObject:message.sendPort];
+            }
+            break;
+            
+        case HZIPCMachMessageIDStop:
+            if (message.sendPort != nil) {
+                NSLog(@"mach server received disconnect message from port %d!", ((NSMachPort *)message.sendPort).machPort);
+                if ([self.clientPorts containsObject:message.sendPort]) {
+                    [self.clientPorts removeObject:message.sendPort];
+                }
             }
             break;
             
@@ -141,7 +150,7 @@
     }
 }
 
-- (void)sendData:(NSData *)data withWidth:(size_t)width height:(size_t)height {
+- (void)sendData:(NSData *)data withWidth:(size_t)width height:(size_t)height bytesPerRow:(size_t)bytesPerRow {
     if ([self.clientPorts count] <= 0) {
         return;
     }
@@ -149,7 +158,8 @@
     @autoreleasepool {
         NSData *widthData = [NSData dataWithBytes:&width length:sizeof(width)];
         NSData *heightData = [NSData dataWithBytes:&height length:sizeof(height)];
-        [self sendMessageToClientsWithMsgId:HZIPCMachMessageIDFrame components:@[widthData, heightData, data]];
+        NSData *bytesPerRowData = [NSData dataWithBytes:&bytesPerRow length:sizeof(bytesPerRow)];
+        [self sendMessageToClientsWithMsgId:HZIPCMachMessageIDFrame components:@[widthData, heightData, bytesPerRowData, data]];
     }
 }
 
@@ -166,11 +176,12 @@
     //NSLog(@"timer");
     size_t width = 1280;
     size_t height = 720;
-    NSData *data = [self pixDataWithWidth:width height:height];
-    [self sendData:data withWidth:1280 height:720];
+    size_t bytesPerRow = 0;
+    NSData *data = [self pixDataWithWidth:width height:height bytesPerRow:&bytesPerRow];
+    [self sendData:data withWidth:width height:height bytesPerRow:bytesPerRow];
 }
 
-- (NSData *)pixDataWithWidth:(size_t)width height:(size_t)height {
+- (NSData *)pixDataWithWidth:(size_t)width height:(size_t)height bytesPerRow:(size_t *)bytesPerRow  {
     CGColorSpaceRef rgbColorSpace = CGColorSpaceCreateDeviceRGB();
     CGContextRef context = CGBitmapContextCreate(NULL, width, height, 8, 0, rgbColorSpace, kCGImageAlphaPremultipliedFirst | kCGImageByteOrder32Big);
     NSParameterAssert(context);
@@ -205,8 +216,8 @@
     CFRelease(frame);
     
     void *data = CGBitmapContextGetData(context);
-    size_t bytesPerRow = CGBitmapContextGetBytesPerRow(context);
-    NSData *nsData = [[NSData alloc] initWithBytes:data length:bytesPerRow * height];
+    *bytesPerRow = CGBitmapContextGetBytesPerRow(context);
+    NSData *nsData = [[NSData alloc] initWithBytes:data length:*bytesPerRow * height];
     
     CGColorSpaceRelease(rgbColorSpace);
     CGContextRelease(context);
