@@ -24,7 +24,7 @@
 //! PlugInMain is the entrypoint for the plugin
 extern "C" {
     void* HZPlugInMain(CFAllocatorRef allocator, CFUUIDRef requestedTypeUUID) {
-        HZLog(@"");
+        HZLog(@"插件开始加载");
         if (!CFEqual(requestedTypeUUID, kCMIOHardwarePlugInTypeID)) {
             return 0;
         }

@@ -28,7 +28,7 @@
 	<string>NSApplication</string>
 	<key>CMIOHardwareAssistantServiceNames</key>
 	<array>
-		<string>com.hz</string>
+		<string>com.Anywii.MacDemo</string>
 	</array>
 	<key>UIBackgroundModes</key>
 	<array>

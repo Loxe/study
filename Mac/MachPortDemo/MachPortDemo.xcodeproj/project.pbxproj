@@ -129,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				7180F15A258749C800722DDA /* Info.plist */,
+				7180F18825874AEE00722DDA /* HZPlugInMain.mm */,
 				7180F18425874AEE00722DDA /* HZDevice.h */,
 				7180F17D25874AED00722DDA /* HZDevice.mm */,
 				7180F17E25874AED00722DDA /* HZObjectStore.h */,
@@ -137,7 +138,6 @@
 				7180F18625874AEE00722DDA /* HZPlugIn.mm */,
 				7180F18725874AEE00722DDA /* HZPlugInInterface.h */,
 				7180F18225874AEE00722DDA /* HZPlugInInterface.mm */,
-				7180F18825874AEE00722DDA /* HZPlugInMain.mm */,
 				7180F18125874AEE00722DDA /* HZStream.h */,
 				7180F18525874AEE00722DDA /* HZStream.mm */,
 			);
@@ -213,7 +213,7 @@
 		7180F0EF2587476B00722DDA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1220;
+				LastUpgradeCheck = 1230;
 				TargetAttributes = {
 					7180F0F62587476B00722DDA = {
 						CreatedOnToolsVersion = 12.2;
@@ -420,6 +420,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = MachPortDemo/MachPortDemo.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = FR47X7YWHJ;
@@ -441,6 +442,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = MachPortDemo/MachPortDemo.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = FR47X7YWHJ;
@@ -459,11 +461,21 @@
 		7180F15F258749C800722DDA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ANALYZER_MIG_CONVENTIONS = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = FR47X7YWHJ;
 				INFOPLIST_FILE = CoreMediaIOPluginDemo/Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				MACH_O_TYPE = mh_dylib;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				OTHER_LDFLAGS = (
+					"-sectcreate",
+					__TEXT,
+					__info_plist,
+					CoreMediaIOPluginDemo/Info.plist,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Anywii.CoreMediaIOPluginDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = plugin;
@@ -473,11 +485,21 @@
 		7180F160258749C800722DDA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ANALYZER_MIG_CONVENTIONS = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = FR47X7YWHJ;
 				INFOPLIST_FILE = CoreMediaIOPluginDemo/Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				MACH_O_TYPE = mh_dylib;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				OTHER_LDFLAGS = (
+					"-sectcreate",
+					__TEXT,
+					__info_plist,
+					CoreMediaIOPluginDemo/Info.plist,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Anywii.CoreMediaIOPluginDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = plugin;

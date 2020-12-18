@@ -138,7 +138,7 @@
 }
 
 - (void)showPromptFrame {
-#pragma todo 这里后面要改
+#pragma warn 这里后面要改
     //if (!self.promptPixelBuffer) {
         self.promptPixelBuffer = [self createPromptPixelBufferWithWidth:1280 height:720];
     //}

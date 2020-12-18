@@ -27,9 +27,9 @@
     self.imageView = [[NSImageView alloc] init];
     [self.view addSubview:self.imageView];
     
-    self.machClient = [[HZIPCMachClient alloc] init];
-    self.machClient.delegate = self;
-    [self.machClient connectToServer];
+//    self.machClient = [[HZIPCMachClient alloc] init];
+//    self.machClient.delegate = self;
+//    [self.machClient connectToServer];
     
 //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 5 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
 //        [self.machClient disconnectToServer];

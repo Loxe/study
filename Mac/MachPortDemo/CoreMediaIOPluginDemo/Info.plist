@@ -13,17 +13,15 @@
 	<key>CFBundleName</key>
 	<string>$(PRODUCT_NAME)</string>
 	<key>CFBundlePackageType</key>
-	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
+	<string>BNDL</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
-	<key>InstallerSectionTitle</key>
-	<string>CoreMediaIOPluginDemo</string>
-	<key>NSMainNibFile</key>
-	<string>MyInstallerPane</string>
-	<key>NSPrincipalClass</key>
-	<string>InstallerSection</string>
+	<key>CFBundleSupportedPlatforms</key>
+	<array>
+		<string>MacOSX</string>
+	</array>
 	<key>CFPlugInFactories</key>
 	<dict>
 		<key>8457B77A-D0304458-B136-8BB5335F4512 </key>
@@ -38,7 +36,11 @@
 	</dict>
 	<key>CMIOHardwareAssistantServiceNames</key>
 	<array>
-		<string>HZ_Name</string>
+		<string>com.Anywii.CoreMediaIOPluginDemo</string>
 	</array>
+	<key>LSMinimumSystemVersion</key>
+	<string>10.11</string>
+	<key>NSPrincipalClass</key>
+	<string>NSApplication</string>
 </dict>
 </plist>

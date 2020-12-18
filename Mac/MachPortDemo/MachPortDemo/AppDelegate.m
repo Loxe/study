@@ -11,6 +11,13 @@
 #import "HZIPCMachClient.h"
 #import "HZIPCGlobalHeader.h"
 
+@protocol HelperProtocol
+
+// Replace the API of this protocol with an API appropriate to the service you are vending.
+- (void)upperCaseString:(NSString *)aString withReply:(void (^)(NSString *))reply;
+    
+@end
+
 @interface AppDelegate ()
 
 @end
@@ -18,8 +25,8 @@
 @implementation AppDelegate
 - (void)applicationWillFinishLaunching:(NSNotification *)notification {
     //[self nsConnectionTest];
-    //[self XPCTest];
-    [self mach_absolute_time];
+    [self XPCTest];
+    //[self mach_absolute_time];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
@@ -33,13 +40,29 @@
 
 #pragma mark - XPC Test
 - (void)XPCTest {
-    // 这个方法只能用在 XPC 服务中, 具 resume 后, 不会返回, 用在其它地方会报错
+    // 这个方法只能用在 XPC 服务中, 且 resume 后, 不会返回, 用在其它地方会报错
     //NSXPCListener *listener = [NSXPCListener serviceListener];
     //[listener resume];
     // 其它地方用下面方法或者 [NSXPCListener anonymousListener]
-    NSXPCListener *listener = [[NSXPCListener alloc] initWithMachServiceName:@"com.Anywii.MachPortDemo"];
-    listener.delegate = [HZXPCDelegate manager];
-    [listener resume];
+//    NSXPCListener *listener = [[NSXPCListener alloc] initWithMachServiceName:@"com.Anywii.MachPortDemo"];
+//    listener.delegate = [HZXPCDelegate manager];
+//    [listener resume];
+    
+    NSXPCConnection *connection = [[NSXPCConnection alloc] initWithMachServiceName:@"com.Anywii.HZXPCBundleDemo" options:NSXPCConnectionPrivileged];
+    connection.remoteObjectInterface = [NSXPCInterface interfaceWithProtocol:@protocol(HelperProtocol)];
+    // 获取远程接口调用对象
+    id rop = [connection remoteObjectProxyWithErrorHandler:^(NSError * _Nonnull error) {
+        NSLog(@"出错了: %@", error);
+    }];
+    [connection resume];
+    // 对象调用接口方法
+    // 只调前面的方法, 不调这个方法, 服务不会启动
+//    [rop test:@"2222" reply:^(NSString *replyString) {
+//        NSLog(@"收到了回复: %@", replyString);
+//    }];
+    [rop upperCaseString:@"233" withReply:^(NSString *s) {
+        NSLog(@"reply: %@", s);
+    }];
 }
 
 #pragma mark - NSConnection Test

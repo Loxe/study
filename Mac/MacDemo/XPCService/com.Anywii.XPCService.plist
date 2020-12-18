@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/Users/anderson/Library/Developer/Xcode/DerivedData/MacDemo-hapfaojtnayurpcinsoarqlgfpbl/Build/Products/Debug/XPCService.xpc/Contents/MacOS/XPCService</string>
+		<string>loadBySystem</string>
+	</array>
+	<key>KeepAlive</key>
+	<true/>
+	<key>Label</key>
+	<string>com.Anywii.XPCService</string>
+	<key>RunAtLoad</key>
+	<true/>
+	<key>MachServices</key>
+	<dict>
+		<key>com.Anywii.XPCService</key>
+		<true/>
+	</dict>
+</dict>
+</plist>

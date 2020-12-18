@@ -23,6 +23,7 @@ int main(int argc, const char *argv[])
     
     // Resuming the serviceListener starts this service. This method does not return.
     [listener resume];
+    NSLog(@"服务启动 0");
     
     /*
     // 这个方法只能用在 XPC 服务中, 具 resume 后, 不会返回, 用在其它地方会报错

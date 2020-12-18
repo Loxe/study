@@ -114,7 +114,7 @@ OSStatus HardwarePlugIn_InitializeWithObjectID(CMIOHardwarePlugInRef self, CMIOO
 }
 
 OSStatus HardwarePlugIn_Teardown(CMIOHardwarePlugInRef self) {
-    HZLog(@"self=%p", self);
+    HZLog(@"插件拆卸 self=%p", self);
     
     OSStatus error = kCMIOHardwareNoError;
     
@@ -343,7 +343,4 @@ static CMIOHardwarePlugInRef sPlugInRef = &sInterfacePtr;
 
 CMIOHardwarePlugInRef PlugInRef() {
     return sPlugInRef;
-    xpc_object_t xobj;
-    IOSurfaceLookupFromXPCObject(xobj);
-    IOSurfaceCreateMachPort(<#IOSurfaceRef  _Nonnull buffer#>)
 }

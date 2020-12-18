@@ -70,6 +70,7 @@
 		719FC59D257F8B100087EF51 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		719FC5A1257F8B180087EF51 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		71A541DA25805A1D00BE0A2E /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		71A5C5E42589DECB008998D0 /* com.Anywii.XPCService.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = com.Anywii.XPCService.plist; sourceTree = "<group>"; };
 		71AE640D2581C4910053A132 /* IOSurface.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOSurface.framework; path = System/Library/Frameworks/IOSurface.framework; sourceTree = SDKROOT; };
 		71AE64112581C49F0053A132 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		71AE64152581C4AC0053A132 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
@@ -204,6 +205,7 @@
 			children = (
 				71AE649A258225CF0053A132 /* main.m */,
 				71AE649C258225CF0053A132 /* Info.plist */,
+				71A5C5E42589DECB008998D0 /* com.Anywii.XPCService.plist */,
 			);
 			path = XPCService;
 			sourceTree = "<group>";
@@ -603,6 +605,7 @@
 				DEVELOPMENT_TEAM = FR47X7YWHJ;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = XPCService/Info.plist;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Anywii.XPCService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -617,6 +620,7 @@
 				DEVELOPMENT_TEAM = FR47X7YWHJ;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = XPCService/Info.plist;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Anywii.XPCService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

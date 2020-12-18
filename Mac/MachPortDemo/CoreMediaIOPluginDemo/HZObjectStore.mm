@@ -6,6 +6,7 @@
 //
 
 #import "HZObjectStore.h"
+#import "HZIPCGLobalHeader.h"
 
 @interface HZObjectStore ()
 @property NSMutableDictionary *objectMap;
@@ -255,6 +256,7 @@
 
 - (void)setObject:(id<HZCMIOObject>)object forObjectId:(CMIOObjectID)objectId {
     self.objectMap[@(objectId)] = object;
+    HZLog(@"存储的对象: %@", self.objectMap);
 }
 
 @end

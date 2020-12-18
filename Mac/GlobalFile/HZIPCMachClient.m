@@ -23,8 +23,10 @@
     // See note in MachServer.mm and don't judge me
     #pragma clang diagnostic push
     #pragma clang diagnostic ignored "-Wdeprecated-declarations"
-    return [[NSMachBootstrapServer sharedInstance] portForName:HZMachBootstrapPortName];
+    NSPort *port = [[NSMachBootstrapServer sharedInstance] portForName:HZMachBootstrapPortName];
     #pragma clang diagnostic pop
+    HZLog(@"获取port: %@", port);
+    return port;
 }
 
 - (BOOL)isServerAvailable {
